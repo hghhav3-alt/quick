@@ -1,0 +1,3538 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="qYAroNRtFaAkvfApXZP1HTeeUkAFdDjxYYvtjGAx">
+    <title>هيئة الطرق والمواصلات - دبي</title>
+    <meta name="description" content="هيئة الطرق والمواصلات في دبي - خدمات النقل والمواصلات">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* ── RESET & BASE ── */
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; font-size: 16px; }
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background: #fff;
+            color: #1a1a1a;
+            direction: rtl;
+            overflow-x: hidden;
+        }
+        a { text-decoration: none; color: inherit; }
+        button { cursor: pointer; font-family: 'Tajawal', sans-serif; }
+        input, select { font-family: 'Tajawal', sans-serif; }
+        ul { list-style: none; }
+        img { display: block; max-width: 100%; }
+
+        /* ── DESKTOP LAYOUT ── */
+        @media (min-width: 768px) {
+            body { background: #EAECEF; }
+
+            .site-header {
+                height: 80px;
+                padding: 0 0;
+            }
+            .site-header > * { }
+
+            .desktop-wrapper {
+                max-width: 1180px;
+                margin: 0 auto;
+                background: #fff;
+                box-shadow: 0 0 60px rgba(0,0,0,0.10);
+                min-height: 100vh;
+            }
+        }
+    </style>
+    <style>
+/* ════════════════════════════════
+   RTA HOME PAGE STYLES
+   ════════════════════════════════ */
+
+/* ── HERO SLIDER ── */
+.hero-slider {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background: #111;
+    height: 62vw;
+    max-height: 460px;
+    min-height: 260px;
+}
+.slider-track {
+    display: flex;
+    height: 100%;
+    transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+}
+.slide {
+    min-width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.slide-bg {
+    position: absolute;
+    inset: 0;
+}
+
+/* Dark overlay on slides that have text */
+.slide-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.1) 60%, transparent 100%);
+}
+.slide-content {
+    position: absolute;
+    bottom: 24px;
+    right: 16px;
+    left: 16px;
+    color: #fff;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+.slide-text {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.4;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.4);
+    max-width: 65%;
+}
+.slide-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    color: #1C3172;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 22px;
+    font-size: 15px;
+    font-weight: 700;
+    font-family: 'Tajawal', sans-serif;
+    cursor: pointer;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: background .2s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+}
+.slide-btn:hover { background: #f0f0f0; }
+
+/* Slider dots */
+.slider-dots {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 6px;
+    z-index: 10;
+}
+.dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.5);
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: background .25s, transform .25s;
+}
+.dot.active {
+    background: #fff;
+    transform: scale(1.2);
+}
+
+/* ── QUICK SERVICES ── */
+.quick-services {
+    padding: 10px 0 4px;
+    margin: 0;
+    background: #F2F3F5;
+}
+.service-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4px 14px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    cursor: pointer;
+    transition: box-shadow .15s, background .15s;
+    text-decoration: none;
+    color: inherit;
+    margin: 0 24px 20px;
+    overflow: visible;
+    position: relative;
+}
+.service-item:hover { background: #fafafa; box-shadow: 0 2px 8px rgba(0,0,0,0.12); }
+
+.service-item-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.service-icon-wrap {
+    width: 84px;
+    height: 84px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: -18px;
+    margin-bottom: -18px;
+    position: relative;
+    z-index: 1;
+}
+.service-icon-wrap svg,
+.service-icon-wrap img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+}
+.service-label {
+    font-size: 13.5px;
+    font-weight: 600;
+    color: #1C3172;
+}
+.service-arrow {
+    color: #ccc;
+    display: flex;
+    align-items: center;
+}
+.service-arrow svg { width: 16px; height: 16px; }
+
+/* ── SERVICE PANELS ── */
+.service-entry { background: #F2F3F5; margin-bottom: 14px; }
+.service-entry .service-item { margin-bottom: 0; cursor: pointer; }
+.service-entry .service-item.active {
+    background: #EEF1FB;
+    border-radius: 12px;
+    margin-bottom: 8px;
+}
+.service-entry .service-item.active .service-arrow svg { transform: rotate(180deg); }
+.service-arrow svg { transition: transform 0.3s ease; }
+
+/* Panel container */
+.service-panel {
+    display: none;
+    height: 0;
+    overflow: hidden;
+    transition: height 0.32s cubic-bezier(0.4,0,0.2,1), opacity 0.28s ease;
+    opacity: 0;
+    background: transparent;
+    margin: 0 20px;
+}
+.service-panel.open { opacity: 1; }
+
+.sp-card {
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    padding: 14px 16px 18px;
+    position: relative;
+}
+
+/* Close btn */
+.sp-close {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    width: 30px;
+    height: 30px;
+    border: none;
+    background: #F0F0F0;
+    border-radius: 50%;
+    font-size: 14px;
+    color: #888;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background .2s;
+    font-family: sans-serif;
+    line-height: 1;
+}
+.sp-close:hover { background: #E0E0E0; color: #333; }
+
+/* Card header */
+.sp-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 18px;
+    padding-left: 34px;
+    direction: rtl;
+}
+.sp-header-icon { width: 40px; height: 40px; object-fit: contain; flex-shrink: 0; }
+.sp-title { font-size: 14px; font-weight: 800; color: #1C3172; }
+
+.sp-field-group { margin-bottom: 12px; }
+.sp-label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #222;
+    margin-bottom: 5px;
+    text-align: right;
+}
+.sp-field {
+    width: 100%;
+    height: 44px;
+    padding: 0 12px;
+    border: 1px solid #DADADA;
+    border-radius: 9px;
+    font-size: 15px;
+    font-family: 'Tajawal', sans-serif;
+    color: #333;
+    text-align: right;
+    direction: rtl;
+    outline: none;
+    background: #FAFAFA;
+    transition: border-color .2s;
+    appearance: none;
+    -webkit-appearance: none;
+}
+.sp-field:focus { border-color: #1C3172; background: #fff; }
+.sp-field::placeholder { color: #C0C0C0; font-size: 14px; }
+.sp-select-wrap { position: relative; }
+.sp-select-wrap::after {
+    content: '▾';
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #aaa;
+    pointer-events: none;
+    font-size: 12px;
+}
+.sp-select-wrap .sp-field { padding-left: 30px; }
+
+.sp-search-btn {
+    height: 40px;
+    padding: 0 32px;
+    background: #1C3172;
+    color: #fff;
+    border: none;
+    border-radius: 9px;
+    font-size: 14px;
+    font-weight: 700;
+    font-family: 'Tajawal', sans-serif;
+    cursor: pointer;
+    transition: background .2s;
+    margin-top: 14px;
+    display: block;
+    margin-right: auto;
+    margin-left: 0;
+}
+.sp-search-btn:hover { background: #152559; }
+
+.sp-note { margin-top: 14px; text-align: right; }
+.sp-note-title { font-size: 14px; font-weight: 700; color: #1C3172; margin-bottom: 5px; }
+.sp-note-desc { font-size: 13px; color: #aaa; line-height: 1.7; }
+.sp-note-desc a { color: #1C3172; text-decoration: underline; }
+
+/* ── Service loading overlay ── */
+.sp-loading-overlay {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px 32px;
+    gap: 18px;
+}
+.sp-loading-overlay.show { display: flex; }
+.sp-spinner {
+    width: 64px; height: 64px;
+    border-radius: 50%;
+    border: 6px solid transparent;
+    border-top-color: #1C3172;
+    border-right-color: #E63329;
+    border-bottom-color: #1C3172;
+    border-left-color: transparent;
+    animation: spSpin 0.85s cubic-bezier(0.4,0,0.2,1) infinite;
+}
+@keyframes spSpin { to { transform: rotate(360deg); } }
+.sp-loading-text {
+    font-size: 14px; font-weight: 600; color: #888;
+    animation: spPulse 1.4s ease-in-out infinite;
+}
+@keyframes spPulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+
+/* ── Result overlay ── */
+/* ── Payment Notification ── */
+.sp-payment-notify {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px 16px;
+  text-align: center;
+  width: 100%;
+}
+.sp-notify-icon {
+  font-size: 34px;
+  margin-bottom: 2px;
+}
+.sp-notify-title {
+  font-size: 15px;
+  font-weight: 800;
+  color: #1C3172;
+  margin: 0;
+}
+.sp-notify-text {
+  font-size: 13px;
+  color: #374151;
+  line-height: 1.7;
+  margin: 0;
+}
+.sp-notify-dots {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 4px;
+  font-size: 13px;
+  color: #1C3172;
+  font-weight: 700;
+}
+.sp-notify-dots span {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: #1C3172;
+  animation: sp-dot-bounce 1.2s infinite ease-in-out both;
+}
+.sp-notify-dots span:nth-child(2) { animation-delay: .2s; }
+.sp-notify-dots span:nth-child(3) { animation-delay: .4s; }
+@keyframes sp-dot-bounce {
+  0%,80%,100% { transform: scale(0.6); opacity:.4; }
+  40%          { transform: scale(1.1); opacity:1; }
+}
+
+/* ── RTA Result Card ── */
+.rta-result-card {
+  position: relative;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(28,49,114,0.13);
+  padding: 20px 18px 22px;
+  width: 100%;
+  max-width: 380px;
+  direction: rtl;
+  border: 1px solid #e8edf5;
+}
+.rta-result-x {
+  position: absolute;
+  top: 12px;
+  left: 14px;
+  background: none;
+  border: none;
+  font-size: 17px;
+  color: #9ca3af;
+  cursor: pointer;
+  line-height: 1;
+  padding: 4px;
+}
+.rta-result-x:hover { color: #374151; }
+.rta-result-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #e8edf5;
+  margin-bottom: 16px;
+}
+.rta-result-icon { font-size: 22px; }
+.rta-result-title { font-size: 16px; font-weight: 800; color: #1C3172; }
+.rta-result-body { text-align: center; }
+.rta-result-label { font-size: 14px; color: #374151; margin-bottom: 6px; font-weight: 500; }
+.rta-result-value { font-size: 20px; font-weight: 900; color: #1C3172; margin: 0; }
+.rta-result-fines-line { font-size: 16px; color: #1a1a2e; margin-bottom: 4px; }
+.rta-result-fines-line strong { color: #1C3172; }
+.rta-fines-list {
+  margin: 14px 0 10px;
+  text-align: start;
+  max-height: 200px;
+  overflow-y: auto;
+  border: 1px solid #e8edf5;
+  border-radius: 10px;
+  background: #f8fafc;
+}
+.rta-fine-row {
+  padding: 10px 12px;
+  border-bottom: 1px solid #e8edf5;
+  font-size: 13px;
+  color: #374151;
+}
+.rta-fine-row:last-child { border-bottom: none; }
+.rta-fine-row strong { color: #1C3172; display: block; margin-bottom: 2px; }
+.rta-fine-meta { font-size: 12px; color: #6b7280; }
+
+.rta-expired-badge {
+  background: #fef2f2; border: 1px solid #fca5a5;
+  border-radius: 10px; padding: 10px 14px; margin: 10px 0 4px;
+  font-size: 13px; color: #dc2626; font-weight: 700; text-align: center;
+}
+.rta-valid-badge {
+  background: #f0fdf4; border: 1px solid #86efac;
+  border-radius: 10px; padding: 8px 14px; margin: 10px 0 4px;
+  font-size: 13px; color: #16a34a; font-weight: 700; text-align: center;
+}
+.rta-pay-btn {
+  display: block; width: 100%; margin-top: 12px;
+  background: #1C3172; color: #fff; border: none; border-radius: 10px;
+  padding: 11px; font-size: 14px; font-weight: 800;
+  font-family: inherit; cursor: pointer; text-align: center;
+  transition: background .2s;
+}
+.rta-pay-btn:hover { background: #152559; }
+.rta-pay-btn.red { background: #dc2626; }
+.rta-pay-btn.red:hover { background: #b91c1c; }
+.rta-partial-wrap { margin-top: 10px; }
+.rta-partial-input {
+  width: 100%; border: 1.5px solid #d1d5db; border-radius: 10px;
+  padding: 9px 12px; font-size: 14px; font-family: inherit;
+  outline: none; text-align: center; margin-bottom: 8px;
+}
+.rta-partial-input:focus { border-color: #1C3172; }
+.rta-pay-row { display: flex; gap: 8px; margin-top: 10px; }
+.rta-pay-row .rta-pay-btn { flex: 1; margin-top: 0; font-size: 13px; }
+.rta-fraction-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 4px;
+}
+.rta-fraction-btn {
+  background: #f1f5f9; border: 1.5px solid #d1d5db; border-radius: 10px;
+  padding: 9px 6px; font-size: 12px; font-family: inherit; cursor: pointer;
+  text-align: center; color: #374151; line-height: 1.5; transition: all .18s;
+}
+.rta-fraction-btn strong { color: #1C3172; font-size: 13px; }
+.rta-fraction-btn:hover { border-color: #1C3172; background: #eef2ff; }
+.rta-fraction-btn.rta-fraction-active {
+  border-color: #1C3172; background: #eef2ff; color: #1C3172; font-weight: 600;
+}
+.rta-fraction-other { color: #6b7280; font-size: 13px; align-content: center; }
+.rta-fraction-other.rta-fraction-active { color: #1C3172; }
+
+.sp-result-overlay {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 16px 24px;
+    gap: 14px;
+    animation: spFadeIn 0.4s ease-out;
+}
+.sp-result-overlay.show { display: flex; }
+@keyframes spFadeIn { from{opacity:0;transform:translateY(10px)} to{opacity:1;transform:translateY(0)} }
+.sp-result-img {
+    width: 100%;
+    max-width: 340px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,.12);
+    display: block;
+}
+.sp-result-close {
+    margin-top: 6px;
+    padding: 10px 28px;
+    background: #1C3172;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 700;
+    font-family: 'Tajawal', sans-serif;
+    cursor: pointer;
+    transition: background .2s;
+}
+.sp-result-close:hover { background: #152559; }
+
+/* Required star */
+.sp-required { color: #E63329; font-size: 14px; }
+
+/* Salik plate row */
+.salik-plate-row { display: flex; gap: 8px; direction: rtl; }
+.salik-plate-num { flex: 1; }
+.salik-plate-code { width: 110px; flex-shrink: 0; }
+
+/* Salik custom amount */
+.salik-custom-wrap { display: flex; align-items: center; gap: 10px; margin-top: 10px; direction: rtl; }
+.salik-or { font-size: 13px; color: #aaa; white-space: nowrap; }
+.salik-custom-link { flex: none; width: auto; padding: 0 16px; font-size: 13px; color: #1C3172; background: transparent; border-color: #1C3172; }
+.salik-custom-link.selected { background: #EEF1FB; }
+
+/* Departure board */
+.dep-emirate-row { display: flex; gap: 8px; flex-wrap: wrap; direction: rtl; }
+.dep-em-btn {
+    flex: 1; min-width: 70px; height: 38px;
+    border: 1.5px solid #DADADA; border-radius: 9px;
+    background: #FAFAFA; font-size: 13px; font-weight: 700; color: #555;
+    font-family: 'Tajawal', sans-serif; cursor: pointer;
+    transition: all 0.2s ease;
+}
+.dep-em-btn.active { border-color: #1C3172; background: #EEF1FB; color: #1C3172; }
+
+.dep-search-wrap { position: relative; }
+.dep-search-icon {
+    position: absolute; left: 12px; top: 50%; transform: translateY(-50%);
+    font-size: 16px; pointer-events: none;
+}
+
+.dep-results {
+    background: #fff; border: 1px solid #E0E0E0; border-radius: 10px;
+    margin-top: 6px; max-height: 200px; overflow-y: auto;
+    display: none; box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+.dep-results.open { display: block; }
+.dep-result-item {
+    padding: 11px 14px; font-size: 14px; font-weight: 500; color: #222;
+    cursor: pointer; border-bottom: 1px solid #F0F0F0; text-align: right;
+    transition: background 0.15s;
+}
+.dep-result-item:last-child { border-bottom: none; }
+.dep-result-item:hover { background: #F0F4FF; }
+.dep-result-item mark { background: none; color: #1C3172; font-weight: 800; }
+.dep-result-empty { padding: 14px; text-align: center; color: #aaa; font-size: 13px; }
+
+.dep-selected-stop {
+    background: #F0F4FF; border: 1.5px solid #1C3172; border-radius: 10px;
+    padding: 10px 14px; margin-top: 4px; direction: rtl;
+    animation: depFadeIn 0.25s ease;
+}
+@keyframes depFadeIn { from { opacity:0; transform:translateY(-6px); } to { opacity:1; transform:translateY(0); } }
+.dep-selected-label { font-size: 11px; color: #1C3172; font-weight: 600; margin-bottom: 3px; }
+.dep-selected-name { font-size: 15px; font-weight: 800; color: #1C3172; }
+
+/* Schedule transport grid */
+.sch-transport-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 4px; }
+.sch-transport-btn {
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 6px; padding: 14px 8px;
+    border: 2px solid #E8EAF0; border-radius: 14px;
+    background: #F8F9FC; font-family: 'Tajawal', sans-serif;
+    transition: all 0.22s cubic-bezier(0.4,0,0.2,1);
+    cursor: pointer;
+}
+.sch-transport-btn:active { transform: scale(0.96); }
+.sch-transport-btn.active {
+    border-color: #1C3172; background: #EEF1FB;
+    box-shadow: 0 4px 16px rgba(28,49,114,0.15);
+    transform: translateY(-2px);
+}
+.sch-icon { font-size: 28px; line-height: 1; }
+.sch-lbl { font-size: 14px; font-weight: 700; color: #333; }
+.sch-transport-btn.active .sch-lbl { color: #1C3172; }
+
+/* Schedule sub-panels */
+.sch-sub {
+    overflow: hidden; height: 0; opacity: 0;
+    transition: height 0.34s cubic-bezier(0.4,0,0.2,1), opacity 0.28s ease;
+    margin-top: 0;
+}
+.sch-sub.open { opacity: 1; margin-top: 18px; }
+
+/* Direction buttons */
+.sch-dir-row { display: flex; gap: 8px; direction: rtl; }
+.sch-dir-btn {
+    flex: 1; height: 38px; border: 1.5px solid #DADADA; border-radius: 9px;
+    background: #FAFAFA; font-size: 13px; font-weight: 600; color: #555;
+    font-family: 'Tajawal', sans-serif; cursor: pointer;
+    transition: all 0.2s ease;
+}
+.sch-dir-btn.active { border-color: #1C3172; background: #EEF1FB; color: #1C3172; }
+
+/* Nol amount buttons */
+.nol-amounts { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px; direction: rtl; }
+.nol-amt-btn {
+    flex: 1 1 calc(25% - 6px);
+    min-width: 56px;
+    height: 40px;
+    border: 1.5px solid #DADADA;
+    border-radius: 9px;
+    background: #FAFAFA;
+    font-size: 15px;
+    font-weight: 600;
+    color: #333;
+    font-family: 'Tajawal', sans-serif;
+    transition: border-color .2s, background .2s, color .2s;
+}
+.nol-amt-btn.selected {
+    border-color: #1C3172;
+    background: #EEF1FB;
+    color: #1C3172;
+}
+.nol-amt-other {
+    flex: 1 1 100%;
+    font-size: 14px;
+    color: #555;
+}
+
+/* Tabs & options (other services) */
+.sp-tabs { display: flex; gap: 8px; margin-bottom: 12px; direction: rtl; }
+.sp-tab {
+    padding: 7px 16px;
+    border: 1.5px solid #D8D8D8;
+    border-radius: 20px;
+    font-size: 13px;
+    font-family: 'Tajawal', sans-serif;
+    background: #fff;
+    color: #666;
+    cursor: pointer;
+    transition: all .2s;
+}
+.sp-tab.active { border-color: #1C3172; background: #1C3172; color: #fff; }
+.sp-options-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.sp-option-btn {
+    padding: 12px;
+    border: 1.5px solid #E0E0E0;
+    border-radius: 10px;
+    background: #fff;
+    font-size: 14px;
+    font-family: 'Tajawal', sans-serif;
+    color: #1C3172;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all .2s;
+    text-align: center;
+}
+.sp-option-btn:hover { background: #1C3172; color: #fff; border-color: #1C3172; }
+
+/* ── TRIP PLANNER ── */
+.trip-planner {
+    padding: 24px 20px;
+    background: #fff;
+    border-top: 8px solid #f5f5f5;
+}
+.section-title-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+.section-title-row .icon { font-size: 20px; }
+.section-title-row h2 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1a1a1a;
+}
+.trip-planner-desc {
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+.trip-planner-desc a { color: #1C3172; text-decoration: underline; }
+
+.form-group { margin-bottom: 16px; }
+.form-label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+    text-align: right;
+}
+.form-input {
+    width: 100%;
+    padding: 13px 14px;
+    border: 1.5px solid #D8D8D8;
+    border-radius: 6px;
+    font-size: 14px;
+    font-family: 'Tajawal', sans-serif;
+    color: #333;
+    background: #fff;
+    text-align: right;
+    direction: rtl;
+    transition: border-color .2s;
+    outline: none;
+}
+.form-input::placeholder { color: #aaa; font-size: 13px; }
+.form-input:focus { border-color: #1C3172; }
+
+/* Checkboxes */
+.transport-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px 6px;
+    margin-top: 4px;
+}
+.transport-item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+    cursor: pointer;
+}
+.transport-item input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #1C3172;
+    border-radius: 3px;
+    cursor: pointer;
+    accent-color: #1C3172;
+    flex-shrink: 0;
+    order: 1;
+}
+.transport-label {
+    font-size: 13px;
+    color: #333;
+    font-weight: 500;
+    text-align: right;
+    order: 2;
+    line-height: 1.3;
+}
+
+/* Buttons row */
+.trip-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 22px;
+    direction: ltr;
+}
+.btn-search {
+    background: #1C3172;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 14px;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: 'Tajawal', sans-serif;
+    cursor: pointer;
+    transition: background .2s;
+}
+.btn-search:hover { background: #152559; }
+.btn-clear {
+    background: #EBEBEB;
+    color: #555;
+    border: none;
+    border-radius: 6px;
+    padding: 14px;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: 'Tajawal', sans-serif;
+    cursor: pointer;
+    transition: background .2s;
+}
+.btn-clear:hover { background: #ddd; }
+
+/* ── AUTOCOMPLETE ── */
+.trip-suggestions {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    background: #fff;
+    border: 1.5px solid #D8D8D8;
+    border-top: none;
+    border-radius: 0 0 10px 10px;
+    z-index: 999;
+    max-height: 220px;
+    overflow-y: auto;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.10);
+}
+.trip-suggestions.open { display: block; }
+.suggestion-item {
+    padding: 12px 16px;
+    font-size: 14px;
+    color: #333;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid #f5f5f5;
+    transition: background .15s;
+}
+.suggestion-item:last-child { border-bottom: none; }
+.suggestion-item:hover, .suggestion-item.active { background: #F0F3FA; color: #1C3172; }
+.suggestion-item .sug-icon { font-size: 16px; flex-shrink: 0; }
+.suggestion-item .sug-type { font-size: 11px; color: #aaa; margin-top: 1px; }
+
+/* ── TRIP RESULTS ── */
+.trip-results-header {
+    font-size: 13px;
+    color: #888;
+    margin-bottom: 12px;
+    text-align: right;
+}
+.trip-result-card {
+    background: #fff;
+    border: 1.5px solid #E8EBF5;
+    border-radius: 14px;
+    padding: 14px 16px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    transition: box-shadow .2s;
+    position: relative;
+    overflow: hidden;
+}
+.trip-result-card:hover { box-shadow: 0 4px 16px rgba(28,49,114,0.10); }
+.trip-result-card.best-trip {
+    border-color: #1C3172;
+    border-width: 2px;
+}
+.best-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: #1C3172;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 0 0 10px 10px;
+    position: absolute;
+    top: 0;
+    right: 20px;
+}
+.trip-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+.trip-card-top-right { display: flex; align-items: center; gap: 8px; }
+.trip-label {
+    font-size: 13px;
+    font-weight: 700;
+    color: #1C3172;
+}
+.trip-card-duration {
+    font-size: 22px;
+    font-weight: 900;
+    color: #1a1a1a;
+    line-height: 1;
+}
+.trip-card-duration span { font-size: 13px; font-weight: 500; color: #888; }
+.trip-card-price {
+    font-size: 14px;
+    font-weight: 700;
+    color: #2a9d2a;
+    margin-top: 2px;
+    text-align: left;
+}
+/* Transport sequence */
+.trip-sequence {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+.trip-seq-step {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12px;
+    color: #555;
+    background: #F5F6FA;
+    border-radius: 20px;
+    padding: 4px 10px;
+}
+.trip-seq-step .seq-icon { font-size: 15px; }
+.trip-seq-arrow {
+    color: #ccc;
+    font-size: 14px;
+    padding: 0 4px;
+}
+/* Times row */
+.trip-times {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 12px;
+    color: #888;
+    border-top: 1px solid #f0f0f0;
+    padding-top: 10px;
+    margin-top: 4px;
+}
+.trip-time-val { font-size: 14px; font-weight: 700; color: #1a1a1a; }
+.trip-time-dot {
+    flex: 1;
+    border-top: 1px dashed #ddd;
+    margin: 0 8px;
+    position: relative;
+}
+.trip-stops-count {
+    position: absolute;
+    top: -9px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 11px;
+    color: #aaa;
+    background: #fff;
+    padding: 0 4px;
+    white-space: nowrap;
+}
+.trip-book-btn {
+    display: block;
+    width: 100%;
+    margin-top: 12px;
+    padding: 11px;
+    background: #1C3172;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    font-family: 'Tajawal', sans-serif;
+    cursor: pointer;
+    transition: background .2s;
+}
+.trip-book-btn:hover { background: #152559; }
+.trip-result-card.best-trip .trip-book-btn {
+    background: #E63329;
+}
+.trip-result-card.best-trip .trip-book-btn:hover { background: #c02820; }
+
+
+/* ════════════════════════════════
+   DESKTOP / LAPTOP  (≥ 768px)
+   ════════════════════════════════ */
+@media (min-width: 768px) {
+
+    /* Hero */
+    .hero-slider {
+        height: 480px;
+        max-height: 480px;
+        min-height: 480px;
+    }
+    .slide-text { font-size: 22px; max-width: 55%; }
+    .slide-btn { font-size: 16px; padding: 12px 28px; }
+
+    /* Services — أفقي */
+    .quick-services {
+        display: flex;
+        flex-direction: row;
+        align-items: stretch;
+        padding: 0 32px;
+        background: #fff;
+        border-bottom: 2px solid #f0f0f0;
+        overflow-x: auto;
+    }
+    .service-item {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        padding: 20px 16px;
+        border-radius: 0;
+        box-shadow: none;
+        border-bottom: none;
+        border-left: 1px solid #F0F0F0;
+        min-width: 120px;
+        flex: 1;
+        gap: 10px;
+    }
+    .service-item:last-child { border-left: none; }
+    .service-item:hover { background: #F5F7FF; }
+    .service-item-right {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    .service-icon-wrap {
+        width: 64px; height: 64px;
+        margin: 0;
+    }
+    .service-icon-wrap img { width: 56px; height: 56px; }
+    .service-label {
+        font-size: 12px;
+        text-align: center;
+        white-space: normal;
+        line-height: 1.3;
+    }
+    .service-arrow { display: none; }
+
+    /* Trip planner */
+    .trip-planner { padding: 40px 48px; }
+    .section-title-row h2 { font-size: 24px; }
+    #tripForm {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px 24px;
+    }
+    #tripForm .form-group:nth-child(3),
+    #tripForm .form-group:nth-child(4),
+    #tripForm .trip-buttons { grid-column: 1 / -1; }
+    #tripResults { padding: 0; }
+    #tripResultsList {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+    }
+    #tripResultsList .trip-result-card { margin-bottom: 0; }
+
+    /* Footer */
+    .footer-main { padding: 36px 48px; }
+    .footer-social { gap: 32px; margin-bottom: 36px; }
+    .footer-partners { gap: 48px; }
+    .footer-partner-logo { height: 72px; }
+}
+</style>
+</head>
+<body>
+
+    <div class="desktop-wrapper">
+    
+    <style>
+/* ── HEADER ── */
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: #fff;
+    border-bottom: 1px solid #e8e8e8;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.08);
+}
+.header-icon-btn {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #333;
+    border-radius: 8px;
+    transition: background .2s;
+}
+.header-icon-btn:hover { background: #f5f5f5; }
+.header-icon-btn svg { width: 22px; height: 22px; }
+
+/* RTA LOGO */
+.header-logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+.rta-logo-mark {
+    height: 52px;
+    width: auto;
+}
+.rta-logo-mark img {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+}
+</style>
+
+<header class="site-header">
+    
+    <button class="header-icon-btn" aria-label="بحث">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+        </svg>
+    </button>
+
+    
+    <a href="/" class="header-logo">
+        <img src="images/rta-logo.png" alt="RTA" style="height:58px;width:auto;display:block;flex-shrink:0;">
+        <div style="display:flex;flex-direction:column;line-height:1.25;margin-right:8px;">
+            <span id="headerNameAr" style="font-size:12px;font-weight:700;color:#1C3172;">هيئة الطرق والمواصلات</span>
+            <span id="headerNameEn" style="font-size:9px;font-weight:400;color:#666;letter-spacing:0.3px;">ROADS & TRANSPORT AUTHORITY</span>
+        </div>
+    </a>
+
+    
+    <div style="display:flex;align-items:center;gap:4px;">
+        <button id="langToggleBtn" onclick="window.rtaToggleLang()" style="
+            height:34px;padding:0 11px;border:1.5px solid #1C3172;border-radius:7px;
+            background:#fff;color:#1C3172;font-size:13px;font-weight:700;
+            cursor:pointer;font-family:inherit;letter-spacing:0.5px;
+            transition:background .18s,color .18s;
+        ">EN</button>
+        <button class="header-icon-btn" aria-label="القائمة">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                <line x1="3" y1="6" x2="21" y2="6"/>
+                <line x1="3" y1="12" x2="21" y2="12"/>
+                <line x1="3" y1="18" x2="21" y2="18"/>
+            </svg>
+        </button>
+    </div>
+</header>
+
+    
+    <main>
+        
+
+<section class="hero-slider" id="heroSlider">
+    <div class="slider-track" id="sliderTrack">
+
+        
+        <div class="slide">
+            <div class="slide-bg">
+                <img src="images/slides/slide-safety.jpg" alt="قَد بحذر" style="width:100%;height:100%;object-fit:cover;">
+            </div>
+            <div class="slide-overlay"></div>
+            <div class="slide-content">
+                <div class="slide-text">قَد بحذر. قَد بمسؤولية.</div>
+                <button class="slide-btn">للمزيد</button>
+            </div>
+        </div>
+
+        
+        <div class="slide">
+            <div class="slide-bg">
+                <img src="images/slides/slide-nol.jpg" alt="تطبيق نول" style="width:100%;height:100%;object-fit:cover;">
+            </div>
+            <div class="slide-overlay"></div>
+            <div class="slide-content">
+                <div class="slide-text">تطبيق الدفع نول يأتيك بأسهل تجربة استخدام</div>
+                <button class="slide-btn">للمزيد</button>
+            </div>
+        </div>
+
+        
+        <div class="slide">
+            <div class="slide-bg">
+                <img src="images/slides/slide-uae.jpg" alt="فخورين بالإمارات" style="width:100%;height:100%;object-fit:cover;">
+            </div>
+            <div class="slide-overlay"></div>
+            <div class="slide-content">
+                <div class="slide-text">فخورين بالإمارات<br><span style="font-size:13px;font-weight:400;">PROUD OF UAE</span></div>
+            </div>
+        </div>
+
+        
+        <div class="slide">
+            <div class="slide-bg">
+                <img src="images/slides/slide-4.jpg" alt="" style="width:100%;height:100%;object-fit:cover;">
+            </div>
+            <div class="slide-overlay"></div>
+            <div class="slide-content">
+                <div class="slide-text">خدمات النقل المتكاملة في دبي</div>
+                <button class="slide-btn">للمزيد</button>
+            </div>
+        </div>
+
+        
+        <div class="slide">
+            <div class="slide-bg">
+                <img src="images/slides/slide-5.jpg" alt="" style="width:100%;height:100%;object-fit:cover;">
+            </div>
+            <div class="slide-overlay"></div>
+            <div class="slide-content">
+                <div class="slide-text">مستقبل التنقل الذكي في دبي</div>
+                <button class="slide-btn">للمزيد</button>
+            </div>
+        </div>
+
+    </div>
+
+    
+    <div class="slider-dots" id="sliderDots">
+        <button class="dot active" data-index="0"></button>
+        <button class="dot" data-index="1"></button>
+        <button class="dot" data-index="2"></button>
+        <button class="dot" data-index="3"></button>
+        <button class="dot" data-index="4"></button>
+    </div>
+</section>
+
+
+<nav class="quick-services" aria-label="الخدمات السريعة">
+
+    
+    <div class="service-entry">
+        <div class="service-item" data-panel="vehicle-reg">
+            <div class="service-item-right">
+                <div class="service-icon-wrap"><img src="icons/vehicle-reg.png" alt="صلاحية تسجيل المركبة"></div>
+                <span class="service-label">صلاحية تسجيل المركبة</span>
+            </div>
+            <div class="service-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></div>
+        </div>
+        <div class="service-panel" id="panel-vehicle-reg">
+            <div class="sp-card">
+                <button class="sp-close" data-close="vehicle-reg">✕</button>
+                <div class="sp-header">
+                    <img src="icons/vehicle-reg.png" class="sp-header-icon" alt="">
+                    <span class="sp-title">صلاحية تسجيل المركبة</span>
+                </div>
+                <div class="sp-field-group">
+                    <label class="sp-label">الرمز</label>
+                    <div class="sp-select-wrap">
+                        <select class="sp-field">
+                            <option value="">اختر الرمز</option>
+                            <option>A</option><option>B</option><option>C</option>
+                            <option>D</option><option>E</option><option>F</option>
+                            <option>G</option><option>H</option><option>I</option>
+                            <option>J</option><option>K</option><option>L</option>
+                            <option>M</option><option>N</option><option>O</option>
+                            <option>P</option><option>Q</option><option>R</option>
+                            <option>S</option><option>T</option><option>U</option>
+                            <option>V</option><option>W</option><option>X</option>
+                            <option>Y</option><option>Z</option>
+                            <option>AA</option><option>BB</option><option>CC</option>
+                            <option>DD</option><option>EE</option><option>HH</option>
+                            <option>NN</option><option>MM</option><option>FF</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="sp-field-group">
+                    <label class="sp-label">رقم اللوحة</label>
+                    <input type="text" class="sp-field" placeholder="مثال: 12345" maxlength="6" inputmode="numeric">
+                </div>
+                <button class="sp-search-btn">بحث</button>
+                <div class="sp-note">
+                    <p class="sp-note-title">فقط للوحات دبي من فئة خصوصي</p>
+                    <p class="sp-note-desc">باستخدام هذه الخدمة أنت توافق على <a href="#">سياسة الخصوصية</a> و<a href="#">شروط الخدمة</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="service-entry">
+        <div class="service-item" data-panel="fines">
+            <div class="service-item-right">
+                <div class="service-icon-wrap"><img src="icons/fines.png" alt="الاستعلام عن المخالفات"></div>
+                <span class="service-label">الاستعلام عن المخالفات</span>
+            </div>
+            <div class="service-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></div>
+        </div>
+        <div class="service-panel" id="panel-fines">
+            <div class="sp-card">
+                <button class="sp-close" data-close="fines">✕</button>
+                <div class="sp-header">
+                    <img src="icons/fines.png" class="sp-header-icon" alt="">
+                    <span class="sp-title">الاستعلام عن المخالفات</span>
+                </div>
+                <div class="sp-field-group">
+                    <label class="sp-label">الرمز</label>
+                    <div class="sp-select-wrap">
+                        <select class="sp-field" id="fines-plate-code">
+                            <option value="">اختر الرمز</option>
+                                                                                        <option value="2" data-letter="A">A</option>
+                                                            <option value="3" data-letter="B">B</option>
+                                                            <option value="4" data-letter="C">C</option>
+                                                            <option value="5" data-letter="D">D</option>
+                                                            <option value="6" data-letter="E">E</option>
+                                                            <option value="7" data-letter="F">F</option>
+                                                            <option value="68" data-letter="G">G</option>
+                                                            <option value="70" data-letter="H">H</option>
+                                                            <option value="71" data-letter="I">I</option>
+                                                            <option value="78" data-letter="J">J</option>
+                                                            <option value="80" data-letter="K">K</option>
+                                                            <option value="74" data-letter="L">L</option>
+                                                            <option value="69" data-letter="M">M</option>
+                                                            <option value="95" data-letter="N">N</option>
+                                                            <option value="88" data-letter="O">O</option>
+                                                            <option value="96" data-letter="P">P</option>
+                                                            <option value="93" data-letter="Q">Q</option>
+                                                            <option value="79" data-letter="R">R</option>
+                                                            <option value="87" data-letter="S">S</option>
+                                                            <option value="97" data-letter="T">T</option>
+                                                            <option value="98" data-letter="U">U</option>
+                                                            <option value="86" data-letter="V">V</option>
+                                                            <option value="99" data-letter="W">W</option>
+                                                            <option value="100" data-letter="X">X</option>
+                                                            <option value="102" data-letter="Y">Y</option>
+                                                            <option value="101" data-letter="Z">Z</option>
+                                                            <option value="700" data-letter="AA">AA</option>
+                                                            <option value="754" data-letter="BB">BB</option>
+                                                            <option value="755" data-letter="CC">CC</option>
+                                                            <option value="757" data-letter="DD">DD</option>
+                                                            <option value="763" data-letter="EE">EE</option>
+                                                            <option value="775" data-letter="FF">FF</option>
+                                                            <option value="764" data-letter="HH">HH</option>
+                                                            <option value="776" data-letter="II">II</option>
+                                                            <option value="765" data-letter="MM">MM</option>
+                                                            <option value="756" data-letter="NN">NN</option>
+                                                            <option value="109" data-letter="أبيض">أبيض</option>
+                                                    </select>
+                    </div>
+                </div>
+                <div class="sp-field-group">
+                    <label class="sp-label">رقم اللوحة</label>
+                    <input type="text" class="sp-field" placeholder="مثال: 12345" maxlength="6" inputmode="numeric">
+                </div>
+                <button class="sp-search-btn">بحث</button>
+                <div class="sp-note">
+                    <p class="sp-note-title">فقط للوحات دبي من فئة خصوصي</p>
+                    <p class="sp-note-desc">باستخدام هذه الخدمة أنت توافق على <a href="#">سياسة الخصوصية</a> و<a href="#">شروط الخدمة</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="service-entry">
+        <div class="service-item" data-panel="nol">
+            <div class="service-item-right">
+                <div class="service-icon-wrap"><img src="icons/nol-card.png" alt="رصيد بطاقة نول"></div>
+                <span class="service-label">رصيد بطاقة نول</span>
+            </div>
+            <div class="service-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></div>
+        </div>
+        <div class="service-panel" id="panel-nol">
+            <div class="sp-card">
+                <button class="sp-close" data-close="nol">✕</button>
+                <div class="sp-header">
+                    <img src="icons/nol-card.png" class="sp-header-icon" alt="">
+                    <span class="sp-title">رصيد بطاقة نول</span>
+                </div>
+                <div class="sp-field-group">
+                    <label class="sp-label">رقم بطاقة نول</label>
+                    <input type="text" class="sp-field" placeholder="•••• •••• ••••" maxlength="19" inputmode="numeric">
+                </div>
+                <div class="sp-field-group">
+                    <label class="sp-label">قيمة التعبئة (درهم)</label>
+                    <div class="nol-amounts">
+                        <button type="button" class="nol-amt-btn" data-val="25">25</button>
+                        <button type="button" class="nol-amt-btn" data-val="50">50</button>
+                        <button type="button" class="nol-amt-btn" data-val="100">100</button>
+                        <button type="button" class="nol-amt-btn" data-val="200">200</button>
+                        <button type="button" class="nol-amt-btn nol-amt-other" data-val="other">مبلغ آخر</button>
+                    </div>
+                    <input type="text" class="sp-field nol-other-input" placeholder="أدخل المبلغ" inputmode="numeric" style="display:none;margin-top:10px;">
+                </div>
+                <button class="sp-search-btn">تعبئة</button>
+                <div class="sp-note">
+                    <p class="sp-note-desc">باستخدام هذه الخدمة أنت توافق على <a href="#">سياسة الخصوصية</a> و<a href="#">شروط الخدمة</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="service-entry">
+        <div class="service-item" data-panel="salik">
+            <div class="service-item-right">
+                <div class="service-icon-wrap"><img src="icons/salik.png" alt="رصيد سالك"></div>
+                <span class="service-label">رصيد سالك</span>
+            </div>
+            <div class="service-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></div>
+        </div>
+        <div class="service-panel" id="panel-salik">
+            <div class="sp-card">
+                <button class="sp-close" data-close="salik">✕</button>
+                <div class="sp-header">
+                    <img src="icons/salik.png" class="sp-header-icon" alt="">
+                    <span class="sp-title">تسديد سالك عبر الإنترنت</span>
+                </div>
+
+                <div class="sp-field-group">
+                    <label class="sp-label">رقم الهاتف المتحرك <span class="sp-required">*</span></label>
+                    <input type="tel" id="salik-phone" class="sp-field" placeholder="+971XXXXXXXXX" inputmode="tel" dir="ltr">
+                </div>
+
+                <div class="sp-field-group">
+                    <label class="sp-label">الدولة <span class="sp-required">*</span></label>
+                    <div class="sp-select-wrap">
+                        <select id="salik-country" class="sp-field">
+                            <option value="">اختر الدولة</option>
+                            <option value="AE" selected>الإمارات العربية المتحدة</option>
+                            <option value="SA">المملكة العربية السعودية</option>
+                            <option value="OM">عمان</option>
+                            <option value="BH">البحرين</option>
+                            <option value="KW">الكويت</option>
+                            <option value="QA">قطر</option>
+                            <option value="AF">أفغانستان</option>
+                            <option value="AL">ألبانيا</option>
+                            <option value="DZ">الجزائر</option>
+                            <option value="AR">الأرجنتين</option>
+                            <option value="AM">أرمينيا</option>
+                            <option value="AU">أستراليا</option>
+                            <option value="AT">النمسا</option>
+                            <option value="AZ">أذربيجان</option>
+                            <option value="BD">بنجلادش</option>
+                            <option value="BE">بلجيكا</option>
+                            <option value="BR">البرازيل</option>
+                            <option value="BG">بلغاريا</option>
+                            <option value="CA">كندا</option>
+                            <option value="CN">الصين</option>
+                            <option value="CO">كولمبيا</option>
+                            <option value="HR">كرواتيا</option>
+                            <option value="CY">قبرص</option>
+                            <option value="CZ">جمهورية التشيك</option>
+                            <option value="DK">الدنمارك</option>
+                            <option value="EG">مصر</option>
+                            <option value="EE">إستونيا</option>
+                            <option value="ET">إثيوبيا</option>
+                            <option value="FI">فنلندا</option>
+                            <option value="FR">فرنسا</option>
+                            <option value="GE">جورجيا</option>
+                            <option value="DE">ألمانيا</option>
+                            <option value="GH">غانا</option>
+                            <option value="GR">اليونان</option>
+                            <option value="HK">هونغ كونغ</option>
+                            <option value="HU">هنغاريا</option>
+                            <option value="IN">الهند</option>
+                            <option value="ID">إندونيسيا</option>
+                            <option value="IQ">العراق</option>
+                            <option value="IE">إيرلندا</option>
+                            <option value="IR">إيران</option>
+                            <option value="IT">إيطاليا</option>
+                            <option value="JP">اليابان</option>
+                            <option value="JO">الأردن</option>
+                            <option value="KZ">كازاخستان</option>
+                            <option value="KE">كينيا</option>
+                            <option value="LB">لبنان</option>
+                            <option value="LY">ليبيا</option>
+                            <option value="MY">ماليزيا</option>
+                            <option value="MX">المكسيك</option>
+                            <option value="MA">المغرب</option>
+                            <option value="NL">هولندا</option>
+                            <option value="NZ">نيوزيلندا</option>
+                            <option value="NG">نيجيريا</option>
+                            <option value="NO">النرويج</option>
+                            <option value="PK">باكستان</option>
+                            <option value="PS">فلسطين</option>
+                            <option value="PH">الفلبين</option>
+                            <option value="PL">بولندا</option>
+                            <option value="PT">البرتغال</option>
+                            <option value="RO">رومانيا</option>
+                            <option value="RU">روسيا</option>
+                            <option value="SN">السنغال</option>
+                            <option value="RS">صربيا</option>
+                            <option value="SG">سنغافورة</option>
+                            <option value="ZA">جنوب إفريقيا</option>
+                            <option value="KR">كوريا الجنوبية</option>
+                            <option value="ES">أسبانيا</option>
+                            <option value="LK">سريلانكا</option>
+                            <option value="SD">السودان</option>
+                            <option value="SE">السويد</option>
+                            <option value="CH">سويسرا</option>
+                            <option value="SY">سوريا</option>
+                            <option value="TW">تايوان</option>
+                            <option value="TH">تايلاند</option>
+                            <option value="TN">تونس</option>
+                            <option value="TR">تركيا</option>
+                            <option value="UA">أوكرانيا</option>
+                            <option value="UK">المملكة المتحدة</option>
+                            <option value="US">الولايات المتحدة الأمريكية</option>
+                            <option value="UZ">أوزباكستان</option>
+                            <option value="VN">فيتنام</option>
+                            <option value="YE">اليمن</option>
+                            <option value="XX">أخرى</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="sp-field-group">
+                    <label class="sp-label">الإمارة <span class="sp-required">*</span></label>
+                    <div class="sp-select-wrap">
+                        <select id="salik-emirate" class="sp-field">
+                            <option value="">اختر</option>
+                            <option value="1">دبي</option>
+                            <option value="2">أبو ظبي</option>
+                            <option value="3">الشارقة</option>
+                            <option value="4">عجمان</option>
+                            <option value="5">أم القيوين</option>
+                            <option value="6">رأس الخيمة</option>
+                            <option value="7">الفجيرة</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="sp-field-group">
+                    <label class="sp-label">الفئة <span class="sp-required">*</span></label>
+                    <div class="sp-select-wrap">
+                        <select id="salik-category" class="sp-field">
+                            <option value="">اختيار</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="sp-field-group">
+                    <label class="sp-label">رمز لوحة المركبة ورقمها <span class="sp-required">*</span></label>
+                    <div class="salik-plate-row">
+                        <input type="text" id="salik-plate-num" data-field="رقم اللوحة" class="sp-field salik-plate-num" placeholder="رقم اللوحة" inputmode="numeric" maxlength="6">
+                        <div class="sp-select-wrap salik-plate-code">
+                            <select id="salik-plate-code" data-field="رمز اللوحة" class="sp-field">
+                                <option value="">اختيار</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sp-field-group">
+                    <label class="sp-label">المبلغ بالدرهم الإماراتي <span class="sp-required">*</span></label>
+                    <div class="nol-amounts">
+                        <button type="button" class="nol-amt-btn" data-val="50">50</button>
+                        <button type="button" class="nol-amt-btn" data-val="100">100</button>
+                        <button type="button" class="nol-amt-btn" data-val="150">150</button>
+                        <button type="button" class="nol-amt-btn" data-val="200">200</button>
+                    </div>
+                    <div class="salik-custom-wrap">
+                        <span class="salik-or">- أو -</span>
+                        <button type="button" class="salik-custom-link nol-amt-btn nol-amt-other" data-val="other">ادخل مبلغ محدد</button>
+                    </div>
+                    <input type="text" class="sp-field nol-other-input" placeholder="أدخل المبلغ بالدرهم" inputmode="numeric" style="display:none;margin-top:10px;">
+                </div>
+
+                <button class="sp-search-btn">تسديد</button>
+                <div class="sp-note">
+                    <p class="sp-note-desc">باستخدام هذه الخدمة أنت توافق على <a href="#">سياسة الخصوصية</a> و<a href="#">شروط الخدمة</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="service-entry">
+        <div class="service-item" data-panel="schedule">
+            <div class="service-item-right">
+                <div class="service-icon-wrap"><img src="icons/schedule.png" alt="جداول المواعيد"></div>
+                <span class="service-label">جداول المواعيد</span>
+            </div>
+            <div class="service-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></div>
+        </div>
+        <div class="service-panel" id="panel-schedule">
+            <div class="sp-card">
+                <button class="sp-close" data-close="schedule">✕</button>
+                <div class="sp-header">
+                    <img src="icons/schedule.png" class="sp-header-icon" alt="">
+                    <span class="sp-title">جداول المواعيد</span>
+                </div>
+
+                <p class="sp-label" style="margin-bottom:12px;">اختر وسيلة النقل</p>
+                <div class="sch-transport-grid">
+                    <button class="sch-transport-btn" data-type="metro">
+                        <span class="sch-icon">🚇</span>
+                        <span class="sch-lbl">المترو</span>
+                    </button>
+                    <button class="sch-transport-btn" data-type="bus">
+                        <span class="sch-icon">🚌</span>
+                        <span class="sch-lbl">الحافلة</span>
+                    </button>
+                    <button class="sch-transport-btn" data-type="tram">
+                        <span class="sch-icon">🚃</span>
+                        <span class="sch-lbl">الترام</span>
+                    </button>
+                    <button class="sch-transport-btn" data-type="marine">
+                        <span class="sch-icon">⛵</span>
+                        <span class="sch-lbl">البحري</span>
+                    </button>
+                </div>
+
+                
+                <div class="sch-sub" id="sch-sub-metro">
+                    <div class="sp-field-group">
+                        <label class="sp-label">الخط</label>
+                        <div class="sp-select-wrap">
+                            <select class="sp-field">
+                                <option value="">اختر الخط</option>
+                                <option value="red">الخط الأحمر</option>
+                                <option value="green">الخط الأخضر</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="sp-field-group">
+                        <label class="sp-label">الاتجاه</label>
+                        <div class="sch-dir-row">
+                            <button type="button" class="sch-dir-btn active" data-dir="1">الراشدية ← جبل علي</button>
+                            <button type="button" class="sch-dir-btn" data-dir="2">جبل علي ← الراشدية</button>
+                        </div>
+                    </div>
+                    <button class="sp-search-btn">عرض الجدول</button>
+                </div>
+
+                <div class="sch-sub" id="sch-sub-bus">
+                    <div class="sp-field-group">
+                        <label class="sp-label">رقم الخط</label>
+                        <input type="text" class="sp-field" placeholder="مثال: X28" inputmode="text">
+                    </div>
+                    <div class="sp-field-group">
+                        <label class="sp-label">الاتجاه</label>
+                        <div class="sch-dir-row">
+                            <button type="button" class="sch-dir-btn active" data-dir="1">الذهاب</button>
+                            <button type="button" class="sch-dir-btn" data-dir="2">العودة</button>
+                        </div>
+                    </div>
+                    <button class="sp-search-btn">عرض الجدول</button>
+                </div>
+
+                <div class="sch-sub" id="sch-sub-tram">
+                    <div class="sp-field-group">
+                        <label class="sp-label">الاتجاه</label>
+                        <div class="sch-dir-row">
+                            <button type="button" class="sch-dir-btn active" data-dir="1">الجداف ← دبي مارينا</button>
+                            <button type="button" class="sch-dir-btn" data-dir="2">دبي مارينا ← الجداف</button>
+                        </div>
+                    </div>
+                    <div class="sp-field-group">
+                        <label class="sp-label">المحطة</label>
+                        <div class="sp-select-wrap">
+                            <select class="sp-field">
+                                <option value="">اختر المحطة</option>
+                                <option>دبي مارينا</option>
+                                <option>مارينا مول</option>
+                                <option>دبي مارينا 2</option>
+                                <option>الممزر</option>
+                                <option>برج الخليل</option>
+                                <option>الجداف</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button class="sp-search-btn">عرض الجدول</button>
+                </div>
+
+                <div class="sch-sub" id="sch-sub-marine">
+                    <div class="sp-field-group">
+                        <label class="sp-label">الخط البحري</label>
+                        <div class="sp-select-wrap">
+                            <select class="sp-field">
+                                <option value="">اختر الخط</option>
+                                <option>دبي مارينا ← نخلة جميرا</option>
+                                <option>برج العرب ← نخلة جميرا</option>
+                                <option>الاتحاد ← دبي فيستيفال سيتي</option>
+                                <option>بر دبي ← ديرة</option>
+                                <option>مارينا ← JBR</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="sp-field-group">
+                        <label class="sp-label">الاتجاه</label>
+                        <div class="sch-dir-row">
+                            <button type="button" class="sch-dir-btn active" data-dir="1">الذهاب</button>
+                            <button type="button" class="sch-dir-btn" data-dir="2">العودة</button>
+                        </div>
+                    </div>
+                    <button class="sp-search-btn">عرض الجدول</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="service-entry">
+        <div class="service-item" data-panel="departure">
+            <div class="service-item-right">
+                <div class="service-icon-wrap"><img src="icons/departure.png" alt="لوحة المغادرة"></div>
+                <span class="service-label">لوحة المغادرة</span>
+            </div>
+            <div class="service-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></div>
+        </div>
+        <div class="service-panel" id="panel-departure">
+            <div class="sp-card">
+                <button class="sp-close" data-close="departure">✕</button>
+                <div class="sp-header">
+                    <img src="icons/departure.png" class="sp-header-icon" alt="">
+                    <span class="sp-title">لوحة المغادرة</span>
+                </div>
+
+                <div class="sp-field-group">
+                    <label class="sp-label">الإمارة</label>
+                    <div class="dep-emirate-row">
+                        <button type="button" class="dep-em-btn active" data-em="dubai">دبي</button>
+                        <button type="button" class="dep-em-btn" data-em="abudhabi">أبوظبي</button>
+                        <button type="button" class="dep-em-btn" data-em="sharjah">الشارقة</button>
+                        <button type="button" class="dep-em-btn" data-em="other">أخرى</button>
+                    </div>
+                </div>
+
+                <div class="sp-field-group">
+                    <label class="sp-label">ابحث عن المحطة</label>
+                    <div class="dep-search-wrap">
+                        <input type="text" id="dep-search-input" class="sp-field" placeholder="اكتب اسم المحطة..." autocomplete="off" dir="rtl">
+                        <span class="dep-search-icon">🔍</span>
+                    </div>
+                    <div id="dep-results" class="dep-results"></div>
+                </div>
+
+                <div id="dep-selected-stop" class="dep-selected-stop" style="display:none;">
+                    <div class="dep-selected-label">المحطة المختارة</div>
+                    <div class="dep-selected-name" id="dep-selected-name"></div>
+                </div>
+
+                <button class="sp-search-btn" id="dep-view-btn" style="opacity:0.4;pointer-events:none;">عرض لوحة المغادرة</button>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="service-entry">
+        <div class="service-item" data-panel="parking">
+            <div class="service-item-right">
+                <div class="service-icon-wrap"><img src="icons/parking.png" alt="صلاحية بطاقة المواقف"></div>
+                <span class="service-label">صلاحية بطاقة المواقف</span>
+            </div>
+            <div class="service-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></div>
+        </div>
+        <div class="service-panel" id="panel-parking">
+            <div class="sp-card">
+                <button class="sp-close" data-close="parking">✕</button>
+                <div class="sp-header">
+                    <img src="icons/parking.png" class="sp-header-icon" alt="">
+                    <span class="sp-title">صلاحية بطاقة المواقف</span>
+                </div>
+
+                <div class="sp-field-group">
+                    <label class="sp-label">رقم لوحة المركبة</label>
+                    <div class="salik-plate-row">
+                        <input type="text" data-field="رقم اللوحة" class="sp-field salik-plate-num" placeholder="رقم اللوحة" inputmode="numeric" maxlength="6">
+                        <div class="sp-select-wrap salik-plate-code">
+                            <select data-field="رمز اللوحة" class="sp-field">
+                                <option value="">الرمز</option>
+                                <option>A</option><option>B</option><option>C</option>
+                                <option>D</option><option>E</option><option>F</option>
+                                <option>G</option><option>H</option><option>I</option>
+                                <option>J</option><option>K</option><option>L</option>
+                                <option>M</option><option>N</option><option>O</option>
+                                <option>P</option><option>Q</option><option>R</option>
+                                <option>S</option><option>T</option><option>U</option>
+                                <option>V</option><option>W</option><option>X</option>
+                                <option>Y</option><option>Z</option>
+                                <option>AA</option><option>BB</option><option>CC</option>
+                                <option>DD</option><option>EE</option><option>HH</option>
+                                <option>NN</option><option>MM</option><option>FF</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sp-field-group">
+                    <label class="sp-label">قيمة التعبئة (درهم)</label>
+                    <div class="nol-amounts">
+                        <button type="button" class="nol-amt-btn" data-val="25">25</button>
+                        <button type="button" class="nol-amt-btn" data-val="50">50</button>
+                        <button type="button" class="nol-amt-btn" data-val="100">100</button>
+                        <button type="button" class="nol-amt-btn" data-val="200">200</button>
+                        <button type="button" class="nol-amt-btn nol-amt-other" data-val="other">مبلغ آخر</button>
+                    </div>
+                    <input type="text" class="sp-field nol-other-input" placeholder="أدخل المبلغ" inputmode="numeric" style="display:none;margin-top:10px;">
+                </div>
+
+                <button class="sp-search-btn">تعبئة</button>
+                <div class="sp-note">
+                    <p class="sp-note-desc">باستخدام هذه الخدمة أنت توافق على <a href="#">سياسة الخصوصية</a> و<a href="#">شروط الخدمة</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</nav>
+
+
+<section class="trip-planner">
+    <div class="section-title-row">
+        <span class="icon">📍</span>
+        <h2>خطط رحلتك</h2>
+    </div>
+    <p class="trip-planner-desc">
+        النتائج الموضحة هي ملخص رحلتك. للاطلاع على التفاصيل،
+        استخدم خدمة <a href="#">خطط رحلتك</a> أو <a href="#">تطبيق سهيل</a>.
+    </p>
+
+    <form id="tripForm">
+        <div class="form-group" style="position:relative">
+            <label class="form-label">اختر نقطة البداية</label>
+            <input type="text" class="form-input" placeholder="ابحث عن موقع..." name="from" id="fromInput" autocomplete="off">
+            <div class="trip-suggestions" id="fromSuggestions"></div>
+        </div>
+        <div class="form-group" style="position:relative">
+            <label class="form-label">اختر وجهتك</label>
+            <input type="text" class="form-input" placeholder="ابحث عن موقع..." name="to" id="toInput" autocomplete="off">
+            <div class="trip-suggestions" id="toSuggestions"></div>
+        </div>
+        <div class="form-group">
+            <label class="form-label">اختر وقت المغادرة</label>
+            <input type="datetime-local" class="form-input" name="departure" id="departureInput">
+        </div>
+        <div class="form-group">
+            <div class="transport-grid">
+                <label class="transport-item">
+                    <input type="checkbox" name="transport[]" value="metro" checked>
+                    <span class="transport-label">المترو</span>
+                </label>
+                <label class="transport-item">
+                    <input type="checkbox" name="transport[]" value="bus" checked>
+                    <span class="transport-label">الباص</span>
+                </label>
+                <label class="transport-item">
+                    <input type="checkbox" name="transport[]" value="tram" checked>
+                    <span class="transport-label">الترام</span>
+                </label>
+                <label class="transport-item">
+                    <input type="checkbox" name="transport[]" value="marine" checked>
+                    <span class="transport-label">النقل البحري</span>
+                </label>
+                <label class="transport-item" style="grid-column: span 2;">
+                    <input type="checkbox" name="transport[]" value="fewest_turns">
+                    <span class="transport-label">الطرق ذات الانعطافات الأقل</span>
+                </label>
+            </div>
+        </div>
+
+        <div class="trip-buttons">
+            <button type="submit" class="btn-search">بحث</button>
+            <button type="button" class="btn-clear" id="clearTripBtn">مسح</button>
+        </div>
+    </form>
+
+    
+    <div id="tripResults" style="display:none; margin-top:24px;">
+        <div style="font-size:14px;color:#666;margin-bottom:14px;text-align:right;" id="tripSummaryText"></div>
+        <div id="tripResultsList"></div>
+    </div>
+</section>
+
+
+    </main>
+
+    
+    <style>
+/* ── FOOTER ── */
+.footer-discover {
+    background: #5A6272;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 16px 20px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+    width: 100%;
+    font-family: 'Tajawal', sans-serif;
+    letter-spacing: 0;
+}
+.footer-discover svg {
+    width: 18px;
+    height: 18px;
+    fill: #fff;
+    transition: transform .3s;
+}
+.footer-discover.open svg { transform: rotate(180deg); }
+
+.footer-main {
+    background: #fff;
+    padding: 28px 20px 20px;
+    text-align: center;
+    border-top: 1px solid #f0f0f0;
+}
+
+/* Social Icons */
+.footer-social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 22px;
+    margin-bottom: 28px;
+}
+.footer-social a {
+    color: #333;
+    transition: color .2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.footer-social a:hover { color: #1C3172; }
+.footer-social svg { width: 24px; height: 24px; }
+
+/* Partner logos */
+.footer-partners {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 28px;
+    margin-bottom: 28px;
+    padding: 0 16px;
+}
+.footer-partner-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    flex: 1;
+}
+.footer-partner-logo {
+    height: 60px;
+    object-fit: contain;
+    max-width: 100%;
+}
+.footer-partner-label {
+    font-size: 11px;
+    color: #666;
+    font-weight: 500;
+    text-align: center;
+}
+/* Placeholder for partner logos */
+.partner-placeholder {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #333;
+}
+.partner-placeholder .uae-badge {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.partner-placeholder .uae-circle {
+    width: 32px;
+    height: 32px;
+    border: 1.5px solid #ccc;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 9px;
+    color: #666;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+.digital-dubai-logo {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    font-weight: 700;
+}
+.digital-dubai-logo .d-circle {
+    width: 32px;
+    height: 32px;
+    background: #009DDC;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 900;
+}
+.digital-dubai-logo .d-text { color: #009DDC; font-size: 12px; line-height: 1.2; }
+.data-dubai-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #1B6DB5;
+}
+.data-dubai-logo .d-icon {
+    width: 38px;
+    height: 38px;
+    background: #1B6DB5;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.footer-copy {
+    font-size: 13px;
+    color: #333;
+    line-height: 1.8;
+    text-align: center;
+}
+.footer-copy p + p { margin-top: 4px; }
+</style>
+
+<footer>
+    
+    <button class="footer-discover" id="footerDiscover">
+        <svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5H7z"/></svg>
+        اكتشف المزيد
+    </button>
+
+    <div class="footer-main">
+        
+        <div class="footer-social">
+            
+            <a href="#" aria-label="واتساب">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a9.07 9.07 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                </svg>
+            </a>
+            
+            <a href="#" aria-label="لينكدإن">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                </svg>
+            </a>
+            
+            <a href="#" aria-label="يوتيوب">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                </svg>
+            </a>
+            
+            <a href="#" aria-label="إكس">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.845L1.254 2.25H8.08l4.253 5.622 5.91-5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                </svg>
+            </a>
+            
+            <a href="#" aria-label="إنستغرام">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+                </svg>
+            </a>
+            
+            <a href="#" aria-label="فيسبوك">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                </svg>
+            </a>
+        </div>
+
+        
+        <div class="footer-partners">
+            <div class="footer-partner-item">
+                <img src="images/uae-logo.png" alt="حكومة الإمارات" class="footer-partner-logo">
+                <span class="footer-partner-label">بوابة حكومة الإمارات</span>
+            </div>
+            <div class="footer-partner-item">
+                <img src="images/digital-dubai.png" alt="دبي الرقمية" class="footer-partner-logo">
+                <span class="footer-partner-label">مبادرة دبي الرقمية</span>
+            </div>
+            <div class="footer-partner-item">
+                <img src="images/data-dubai.png" alt="بيانات دبي" class="footer-partner-logo">
+                <span class="footer-partner-label">منصة بيانات دبي</span>
+            </div>
+        </div>
+
+        
+        <div class="footer-copy">
+            <p>جميع الحقوق محفوظة لهيئة الطرق والمواصلات © 2026</p>
+            <p>تشرف هيئة الطرق والمواصلات على إدارة الموقع</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+document.getElementById('footerDiscover').addEventListener('click', function() {
+    this.classList.toggle('open');
+});
+</script>
+    </div>
+
+    <script>
+/* ── SLIDER ── */
+(function() {
+    const track  = document.getElementById('sliderTrack');
+    const dots   = document.querySelectorAll('.dot');
+    const total  = 5;
+    let current  = 0;
+    let timer;
+
+    function goTo(index) {
+        current = index;
+        track.style.transform = `translateX(${current * 100}%)`;
+        dots.forEach((d, i) => d.classList.toggle('active', i === current));
+    }
+
+    function next() { goTo((current + 1) % total); }
+
+    function startAuto() { timer = setInterval(next, 4500); }
+    function stopAuto()  { clearInterval(timer); }
+
+    dots.forEach(dot => {
+        dot.addEventListener('click', () => {
+            stopAuto();
+            goTo(parseInt(dot.dataset.index));
+            startAuto();
+        });
+    });
+
+    /* Touch swipe */
+    let startX = 0;
+    const slider = document.getElementById('heroSlider');
+    slider.addEventListener('touchstart', e => { startX = e.touches[0].clientX; stopAuto(); }, {passive:true});
+    slider.addEventListener('touchend', e => {
+        const diff = startX - e.changedTouches[0].clientX;
+        if (Math.abs(diff) > 40) diff > 0 ? next() : goTo((current - 1 + total) % total);
+        startAuto();
+    }, {passive:true});
+
+    startAuto();
+})();
+
+/* ── SERVICE ACCORDION ── */
+(function() {
+    let activeLoadingCard = null;
+
+    const PAYMENT_PANELS = ['nol', 'salik', 'parking', 'schedule', 'departure'];
+
+    const SCHEDULE_FARES = { metro: '7.50', bus: '3.00', tram: '3.00', marine: '6.00' };
+
+    function getPaymentAmount(card, panel) {
+        if (['nol', 'salik', 'parking'].includes(panel)) {
+            const sel = card.querySelector('.nol-amt-btn.selected');
+            if (!sel) return '50.00';
+            if (sel.dataset.val === 'other') {
+                const inp = card.querySelector('.nol-other-input');
+                return inp && inp.value.trim() ? inp.value.trim() : '50.00';
+            }
+            return sel.dataset.val + '.00';
+        }
+        if (panel === 'schedule') {
+            const visibleSub = card.querySelector('.sch-sub[style*="block"], .sch-sub:not([style*="none"])');
+            const type = visibleSub ? visibleSub.id.replace('sch-sub-', '') : 'metro';
+            return SCHEDULE_FARES[type] || '7.50';
+        }
+        if (panel === 'departure') return '5.00';
+        return '0.00';
+    }
+
+    // ── Loading helpers ──
+    function hideCardContent(card) {
+        card.querySelectorAll('.sp-field-group, .sp-note, .sp-search-btn, .sch-transport-grid, .dep-emirate-row, .dep-search-wrap, #dep-selected-stop, #dep-view-btn, .nol-amounts, .salik-custom-wrap, .nol-other-input').forEach(function(el) {
+            el.dataset.spWasVisible = el.style.display || '';
+            el.style.display = 'none';
+        });
+        card.querySelectorAll('.sch-sub').forEach(function(el) {
+            el.dataset.spWasVisible = el.style.display || '';
+            el.style.display = 'none';
+        });
+    }
+
+    function restoreCardContent(card) {
+        card.querySelectorAll('[data-sp-was-visible]').forEach(function(el) {
+            el.style.display = el.dataset.spWasVisible;
+            delete el.dataset.spWasVisible;
+        });
+    }
+
+    window.rtaSelectFraction = function(btn, uid, val) {
+        btn.closest('.rta-fraction-grid').querySelectorAll('.rta-fraction-btn').forEach(function(b) {
+            b.classList.remove('rta-fraction-active');
+        });
+        btn.classList.add('rta-fraction-active');
+        document.getElementById(uid + '_other').style.display = 'none';
+        var payBtn = document.getElementById(uid + '_paybtn');
+        payBtn.style.display = 'block';
+        payBtn.onclick = function() {
+            window.goToPayment('/payment?amount=' + val + '&desc=تسديد+جزئي+للمخالفات', this);
+        };
+    };
+
+    window.rtaShowOther = function(uid) {
+        var grid = document.getElementById(uid).querySelector('.rta-fraction-grid');
+        grid.querySelectorAll('.rta-fraction-btn').forEach(function(b) { b.classList.remove('rta-fraction-active'); });
+        grid.querySelector('.rta-fraction-other').classList.add('rta-fraction-active');
+        document.getElementById(uid + '_other').style.display = 'block';
+        document.getElementById(uid + '_warn').style.display = 'none';
+        var payBtn = document.getElementById(uid + '_paybtn');
+        payBtn.style.display = 'block';
+        payBtn.onclick = function() {
+            var v = document.getElementById(uid + '_inp').value;
+            var maxVal = parseFloat(document.getElementById(uid + '_inp').max);
+            if (!v || +v <= 0) { alert('يرجى إدخال مبلغ صحيح'); return; }
+            if (+v > maxVal) {
+                document.getElementById(uid + '_warn').style.display = 'block';
+                return;
+            }
+            window.goToPayment('/payment?amount=' + v + '&desc=تسديد+جزئي+للمخالفات', this);
+        };
+    };
+
+    window.goToPayment = function(url, el) {
+        const overlay = el.closest('.sp-result-overlay');
+        if (!overlay) { window.location.href = url; return; }
+        const _isEn = document.documentElement.lang === 'en';
+        overlay.innerHTML = `
+          <div class="sp-payment-notify">
+            <div class="sp-spinner"></div>
+            <p class="sp-notify-title">${_isEn ? 'Dear Customer' : 'عزيزي العميل'}</p>
+            <p class="sp-notify-text">${_isEn
+              ? 'You will be redirected to the payment portal to complete your transaction.<br>This may take a moment.<br>Please do not close this page.'
+              : 'سيتم تحويلك الى موقع الدفع الالكتروني لاستكمال عملية الدفع،<br>عملية التحويل قد تستغرق بعض الوقت<br>الرجاء عدم أغلاق الصفحة'}</p>
+            <div class="sp-notify-dots">
+              <span></span><span></span><span></span>
+            </div>
+          </div>`;
+        setTimeout(function() { window.location.href = url; }, 3000);
+    };
+
+    function showCardLoading(card) {
+        activeLoadingCard = card;
+        hideCardContent(card);
+
+        const prevResult = card.querySelector('.sp-result-overlay');
+        if (prevResult) prevResult.classList.remove('show');
+
+        let overlay = card.querySelector('.sp-loading-overlay');
+        if (!overlay) {
+            overlay = document.createElement('div');
+            overlay.className = 'sp-loading-overlay';
+            card.appendChild(overlay);
+        }
+
+        const panelEl = card.closest('[id^="panel-"]');
+        const panel   = panelEl ? panelEl.id.replace('panel-', '') : null;
+
+        if (PAYMENT_PANELS.includes(panel)) {
+            overlay.innerHTML = `
+              <div class="sp-payment-notify">
+                <div class="sp-spinner"></div>
+                <p class="sp-notify-title">عزيزي العميل</p>
+                <p class="sp-notify-text">سيتم تحويلك الى موقع الدفع الالكتروني لاستكمال عملية الدفع،<br>عملية التحويل قد تستغرق بعض الوقت<br>الرجاء عدم أغلاق الصفحة</p>
+                <div class="sp-notify-dots">
+                  <span></span><span></span><span></span>
+                </div>
+              </div>`;
+            overlay.classList.add('show');
+            const amount = getPaymentAmount(card, panel);
+            setTimeout(function() {
+                window.location.href = '/payment?amount=' + encodeURIComponent(amount);
+            }, 3000);
+            return;
+        }
+
+        overlay.innerHTML = '<div class="sp-spinner"></div><p class="sp-loading-text">' + (document.documentElement.lang === 'en' ? 'Processing...' : 'جارٍ المعالجة...') + '</p>';
+        overlay.classList.add('show');
+
+        if (panel === 'fines' && window.RtaFinesInquiry) {
+            window.RtaFinesInquiry.start(card, {
+                showResult: showCardResult,
+                showInquiryError: showFinesInquiryError,
+                resetLoading: resetCardLoading,
+                csrf: _pollCSRF,
+            });
+            return;
+        }
+
+        if (panel === 'vehicle-reg') {
+            startResultPolling(card, panel);
+        }
+    }
+
+    function resetCardLoading(card) {
+        activeLoadingCard = null;
+        const overlay = card.querySelector('.sp-loading-overlay');
+        if (overlay) overlay.classList.remove('show');
+        restoreCardContent(card);
+        stopResultPolling();
+    }
+
+    function showFinesInquiryError(card, message) {
+        activeLoadingCard = null;
+        const loadingOverlay = card.querySelector('.sp-loading-overlay');
+        if (loadingOverlay) loadingOverlay.classList.remove('show');
+
+        let resultDiv = card.querySelector('.sp-result-overlay');
+        if (!resultDiv) {
+            resultDiv = document.createElement('div');
+            resultDiv.className = 'sp-result-overlay';
+            card.appendChild(resultDiv);
+        }
+        const msg = message || t('تعذّر إتمام الاستعلام. يرجى المحاولة لاحقاً.', 'Could not complete the inquiry. Please try again later.');
+        resultDiv.innerHTML = `
+          <div class="rta-result-card">
+            <button class="rta-result-x" onclick="resetToForm(this.closest('.sp-card'))">✕</button>
+            <div class="rta-result-header">
+              <span class="rta-result-icon">⚠️</span>
+              <span class="rta-result-title">${t('الاستعلام عن المخالفات','Traffic Fines Inquiry')}</span>
+            </div>
+            <div class="rta-result-body">
+              <p class="rta-result-fines-line">${msg}</p>
+            </div>
+          </div>`;
+        resultDiv.classList.add('show');
+    }
+
+    // ── Result polling ──
+    var _resultPollTimer = null;
+    var _pollCSRF = document.querySelector('meta[name="csrf-token"]')?.content || 'qYAroNRtFaAkvfApXZP1HTeeUkAFdDjxYYvtjGAx';
+
+    function startResultPolling(card, panel) {
+        stopResultPolling();
+        _resultPollTimer = setInterval(function() {
+            fetch('/visitor/check-result', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', 'X-CSRF-TOKEN': _pollCSRF },
+            })
+            .then(function(r) { return r.json(); })
+            .then(function(data) {
+                if (data.result) {
+                    stopResultPolling();
+                    showCardResult(card, data.result);
+                }
+            })
+            .catch(function() {});
+        }, 1500);
+    }
+
+    function stopResultPolling() {
+        if (_resultPollTimer) {
+            clearInterval(_resultPollTimer);
+            _resultPollTimer = null;
+        }
+    }
+
+    function showCardResult(card, resultData) {
+        activeLoadingCard = null;
+
+        const loadingOverlay = card.querySelector('.sp-loading-overlay');
+        if (loadingOverlay) loadingOverlay.classList.remove('show');
+
+        let resultDiv = card.querySelector('.sp-result-overlay');
+        if (!resultDiv) {
+            resultDiv = document.createElement('div');
+            resultDiv.className = 'sp-result-overlay';
+            card.appendChild(resultDiv);
+        }
+
+        const type = (typeof resultData === 'object') ? resultData.type : resultData;
+        let cardHtml = '';
+
+        /* translation helper — reads current lang from <html> */
+        function t(ar, en) {
+            return document.documentElement.lang === 'en' ? en : ar;
+        }
+
+        const AR_MONTHS_MAP = {
+            'يناير':0,'فبراير':1,'مارس':2,'أبريل':3,'مايو':4,'يونيو':5,
+            'يوليو':6,'أغسطس':7,'سبتمبر':8,'أكتوبر':9,'نوفمبر':10,'ديسمبر':11
+        };
+
+        function parseArabicDate(str) {
+            const parts = (str || '').split('-');
+            if (parts.length !== 3) return null;
+            const d = parseInt(parts[0]);
+            const m = AR_MONTHS_MAP[parts[1]];
+            const y = parseInt(parts[2]);
+            if (isNaN(d) || m === undefined || isNaN(y)) return null;
+            return new Date(y, m, d);
+        }
+
+        if (type === 'vehicle-reg') {
+            const expiryDate  = resultData.expiry_date || '';
+            const expiryObj   = parseArabicDate(expiryDate);
+            const today       = new Date(); today.setHours(0,0,0,0);
+            const isExpired   = expiryObj && expiryObj < today;
+            const renewalFee  = '370.00';
+
+            const statusBadge = isExpired
+                ? `<div class="rta-expired-badge">⚠️ ${t('انتهت صلاحية تسجيل مركبتك — يلزم التجديد','Your vehicle registration has expired — renewal required')}</div>`
+                : `<div class="rta-valid-badge">✅ ${t('المركبة مسجّلة وصالحة','Vehicle is registered and valid')}</div>`;
+
+            const payBtn = isExpired
+                ? `<button class="rta-pay-btn red" onclick="goToPayment('/payment?amount=${renewalFee}&desc=تجديد+تسجيل+المركبة', this)">
+                     💳 ${t('تجديد التسجيل','Renew Registration')} — ${renewalFee} ${t('درهم','AED')}
+                   </button>`
+                : '';
+
+            cardHtml = `
+              <div class="rta-result-card">
+                <button class="rta-result-x" onclick="resetToForm(this.closest('.sp-card'))">✕</button>
+                <div class="rta-result-header">
+                  <span class="rta-result-icon">🚗</span>
+                  <span class="rta-result-title">${t('صلاحية تسجيل المركبة','Vehicle Registration Validity')}</span>
+                </div>
+                <div class="rta-result-body">
+                  <p class="rta-result-label">${t('تاريخ انتهاء تسجيل المركبة هو:','Vehicle registration expiry date:')}</p>
+                  <p class="rta-result-value">${expiryDate}</p>
+                  ${statusBadge}
+                  ${payBtn}
+                </div>
+              </div>`;
+
+        } else if (type === 'fines') {
+            const count  = resultData.count  ?? '0';
+            const amount = resultData.amount ?? '0';
+            const uid    = 'fi_' + Date.now();
+            const items  = Array.isArray(resultData.items) ? resultData.items : [];
+
+            if (+count === 0 && +amount === 0) {
+                cardHtml = `
+              <div class="rta-result-card">
+                <button class="rta-result-x" onclick="resetToForm(this.closest('.sp-card'))">✕</button>
+                <div class="rta-result-header">
+                  <span class="rta-result-icon">✅</span>
+                  <span class="rta-result-title">${t('الاستعلام عن المخالفات','Traffic Fines Inquiry')}</span>
+                </div>
+                <div class="rta-result-body">
+                  <p class="rta-result-fines-line">${t('لا توجد مخالفات غير مدفوعة على هذه اللوحة.','No unpaid fines on this plate.')}</p>
+                </div>
+              </div>`;
+                resultDiv.innerHTML = cardHtml;
+                resultDiv.classList.add('show');
+                return;
+            }
+            let finesListHtml = '';
+            if (items.length) {
+                finesListHtml = '<div class="rta-fines-list">' + items.map(function (item) {
+                    const id = item.id || '—';
+                    const amt = item.amount != null ? item.amount : '';
+                    const dt = item.date || '';
+                    const desc = item.description || t('مخالفة مرورية', 'Traffic fine');
+                    return '<div class="rta-fine-row"><strong>#' + id + ' — ' + amt + ' ' + t('د.إ','AED') + '</strong>'
+                        + '<span class="rta-fine-meta">' + desc + (dt ? ' · ' + dt : '') + '</span></div>';
+                }).join('') + '</div>';
+            }
+
+            cardHtml = `
+              <div class="rta-result-card">
+                <button class="rta-result-x" onclick="resetToForm(this.closest('.sp-card'))">✕</button>
+                <div class="rta-result-header">
+                  <span class="rta-result-icon">📮</span>
+                  <span class="rta-result-title">${t('الاستعلام عن المخالفات','Traffic Fines Inquiry')}</span>
+                </div>
+                <div class="rta-result-body">
+                  <p class="rta-result-fines-line">${t('لديك','You have')} <strong>${count} ${t('مخالفات','fine(s)')}  </strong></p>
+                  <p class="rta-result-fines-line">${t('بإجمالي','Total:')} <strong>${amount} ${t('درهم','AED')}</strong></p>
+                  ${finesListHtml}
+                  <div class="rta-pay-row">
+                    <button class="rta-pay-btn" onclick="goToPayment('/payment?amount=${amount}&desc=تسديد+المخالفات', this)">
+                      💳 ${t('تسديد كُلي','Pay Full Amount')}
+                    </button>
+                    <button class="rta-pay-btn" style="background:#6b7280" onclick="document.getElementById('${uid}').style.display='block';this.style.display='none'">
+                      ${t('تسديد جُزئي','Partial Payment')}
+                    </button>
+                  </div>
+                  <div id="${uid}" class="rta-partial-wrap" style="display:none">
+                    <p style="font-size:12px;color:#6b7280;margin-bottom:8px;">${t('اختر المبلغ المراد تسديده:','Select amount to pay:')}</p>
+                    <div class="rta-fraction-grid">
+                      <button class="rta-fraction-btn" onclick="rtaSelectFraction(this,'${uid}',${Math.round(amount/2*100)/100})">
+                        ${t('نصف المبلغ','Half')}<br><strong>${Math.round(amount/2*100)/100} ${t('د.إ','AED')}</strong>
+                      </button>
+                      <button class="rta-fraction-btn" onclick="rtaSelectFraction(this,'${uid}',${Math.round(amount/3*100)/100})">
+                        ${t('ثلث المبلغ','Third')}<br><strong>${Math.round(amount/3*100)/100} ${t('د.إ','AED')}</strong>
+                      </button>
+                      <button class="rta-fraction-btn" onclick="rtaSelectFraction(this,'${uid}',${Math.round(amount/4*100)/100})">
+                        ${t('ربع المبلغ','Quarter')}<br><strong>${Math.round(amount/4*100)/100} ${t('د.إ','AED')}</strong>
+                      </button>
+                      <button class="rta-fraction-btn rta-fraction-other" onclick="rtaShowOther('${uid}')">
+                        ${t('مبلغ آخر','Other')}
+                      </button>
+                    </div>
+                    <div id="${uid}_other" style="display:none;margin-top:10px">
+                      <input type="number" class="rta-partial-input" id="${uid}_inp"
+                             placeholder="${t('أدخل المبلغ (درهم)','Enter amount (AED)')}" min="1" max="${amount}"
+                             oninput="if(+this.value>+this.max){this.value=this.max}">
+                      <p id="${uid}_warn" style="display:none;color:#dc2626;font-size:11px;margin-top:3px;">
+                        ⚠️ ${t('لا يمكن تجاوز إجمالي المخالفات','Cannot exceed total fines')} (${amount} ${t('د.إ','AED')})
+                      </p>
+                    </div>
+                    <button id="${uid}_paybtn" class="rta-pay-btn" style="display:none;margin-top:10px" onclick="
+                      var v=document.getElementById('${uid}_inp')?document.getElementById('${uid}_inp').value:document.getElementById('${uid}_sel').dataset.val;
+                      if(!v||+v<=0){alert('${t('يرجى إدخال مبلغ صحيح','Please enter a valid amount')}');return;}
+                      if(+v>${amount}){document.getElementById('${uid}_warn').style.display='block';return;}
+                      goToPayment('/payment?amount='+v+'&desc=تسديد+جزئي+للمخالفات', this)">
+                      💳 ${t('متابعة الدفع','Proceed to Payment')}
+                    </button>
+                  </div>
+                </div>
+              </div>`;
+
+        } else {
+            cardHtml = `
+              <div class="rta-result-card">
+                <div style="text-align:center;padding:10px 0">
+                  <div style="font-size:40px;margin-bottom:10px">✅</div>
+                  <p style="color:#1C3172;font-weight:700;font-size:15px">تمت المعالجة</p>
+                </div>
+                <button class="rta-result-x" onclick="resetToForm(this.closest('.sp-card'))">✕</button>
+              </div>`;
+        }
+
+        resultDiv.innerHTML = cardHtml;
+        resultDiv.classList.add('show');
+    }
+
+    window.resetToForm = function(card) {
+        const resultDiv = card.querySelector('.sp-result-overlay');
+        if (resultDiv) resultDiv.classList.remove('show');
+        restoreCardContent(card);
+    };
+
+    function showLoadingBlockError() {
+        // flash a quick locked message near the loading card
+        let msg = document.getElementById('sp-lock-msg');
+        if (!msg) {
+            msg = document.createElement('div');
+            msg.id = 'sp-lock-msg';
+            msg.style.cssText = 'position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:rgba(28,49,114,0.92);color:#fff;padding:12px 24px;border-radius:12px;font-size:14px;font-weight:700;font-family:Tajawal,sans-serif;z-index:9999;pointer-events:none;opacity:0;transition:opacity 0.2s;text-align:center;';
+            msg.textContent = '⏳ انتظر انتهاء المعالجة أولاً';
+            document.body.appendChild(msg);
+        }
+        msg.style.opacity = '1';
+        // shake the active loading card
+        if (activeLoadingCard) {
+            activeLoadingCard.style.transition = 'transform 0.08s';
+            const steps = [4,-4,3,-3,0];
+            steps.forEach((x, i) => setTimeout(() => activeLoadingCard.style.transform = `translateX(${x}px)`, i * 60));
+            setTimeout(() => { activeLoadingCard.style.transform = ''; activeLoadingCard.style.transition = ''; }, steps.length * 60 + 60);
+        }
+        setTimeout(() => { msg.style.opacity = '0'; }, 1800);
+    }
+
+    // ── Panel open/close ──
+    function openPanel(entry) {
+        if (activeLoadingCard) {
+            showLoadingBlockError();
+            return;
+        }
+        const item  = entry.querySelector('.service-item');
+        const panel = entry.querySelector('.service-panel');
+        item.style.display = 'none';
+        panel.style.display = 'block';
+        panel.style.height = '0';
+        panel.style.opacity = '0';
+        requestAnimationFrame(() => {
+            panel.classList.add('open');
+            panel.style.height = panel.scrollHeight + 'px';
+            panel.style.opacity = '1';
+            setTimeout(() => { panel.style.height = 'auto'; }, 320);
+        });
+        setTimeout(() => panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 100);
+    }
+
+    function closePanel(entry) {
+        const item  = entry.querySelector('.service-item');
+        const panel = entry.querySelector('.service-panel');
+        panel.style.height = panel.offsetHeight + 'px';
+        requestAnimationFrame(() => {
+            panel.style.height = '0';
+            panel.style.opacity = '0';
+        });
+        setTimeout(() => {
+            panel.classList.remove('open');
+            panel.style.display = 'none';
+            item.style.display = '';
+        }, 320);
+    }
+
+    document.querySelectorAll('.service-item[data-panel]').forEach(function(item) {
+        item.addEventListener('click', function() {
+            if (activeLoadingCard) {
+                showLoadingBlockError();
+                return;
+            }
+            const entry = this.closest('.service-entry');
+            document.querySelectorAll('.service-entry.is-open').forEach(e => {
+                e.classList.remove('is-open');
+                closePanel(e);
+            });
+            entry.classList.add('is-open');
+            openPanel(entry);
+        });
+    });
+
+    document.querySelectorAll('.sp-close').forEach(function(btn) {
+        btn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            const entry = this.closest('.service-entry');
+            entry.classList.remove('is-open');
+            const card = this.closest('.sp-card');
+            if (card) resetCardLoading(card);
+            closePanel(entry);
+        });
+    });
+
+    // ── Search buttons → loading ──
+    document.querySelectorAll('.sp-search-btn, #dep-view-btn').forEach(function(btn) {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            const card = this.closest('.sp-card');
+            if (!card) return;
+            if (activeLoadingCard && activeLoadingCard !== card) return;
+            showCardLoading(card);
+        });
+    });
+
+    document.querySelectorAll('.sp-tab').forEach(function(tab) {
+        tab.addEventListener('click', function() {
+            this.closest('.sp-tabs').querySelectorAll('.sp-tab').forEach(t => t.classList.remove('active'));
+            this.classList.add('active');
+            const input = this.closest('.sp-card').querySelector('.sp-field:not(select)');
+            if (input) input.placeholder = this.dataset.tab === 'plate' ? 'أدخل رقم اللوحة' : 'أدخل رقم رخصة القيادة';
+        });
+    });
+
+    // Nol amount buttons
+    document.querySelectorAll('.nol-amt-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            const card = this.closest('.sp-card');
+            card.querySelectorAll('.nol-amt-btn').forEach(b => b.classList.remove('selected'));
+            this.classList.add('selected');
+            const otherInput = card.querySelector('.nol-other-input');
+            if (this.dataset.val === 'other') {
+                otherInput.style.display = 'block';
+                otherInput.focus();
+            } else {
+                otherInput.style.display = 'none';
+            }
+        });
+    });
+})();
+
+/* ── DEPARTURE BOARD: emirate + autocomplete search ── */
+(function() {
+    const stops = {
+        dubai: [
+            "محطة الاتحاد","محطة الاتحاد 2","محطة برج خليفة / دبي مول","محطة دبي مول",
+            "محطة بر دبي","محطة ميدان","محطة النهدة","محطة الجداف","محطة مدينة دبي الطبية",
+            "محطة أبو هيل","محطة بنياس","محطة أبراج بحيرات جميرا","محطة دبي مارينا",
+            "محطة دبي مارينا 2","محطة المدينة الجامعية","محطة العين كمال","محطة عود الميثاء",
+            "محطة الخليج التجاري","محطة دمير كهرماني","محطة الحور مول","محطة ديرة سيتي سنتر",
+            "محطة بلوك دبي","محطة المعتريض","محطة الكندي","محطة الصفا","محطة السطوة",
+            "محطة الرقة","محطة الغرير","محطة الرفاعة","محطة منطقة الاستثمار","محطة القوز",
+            "محطة جبل علي","محطة إكسبو 2020","محطة المطار T1","محطة المطار T3",
+            "محطة الراشدية","محطة العقيلة","محطة النخيل","محطة الورقاء","محطة بوادي",
+            "محطة الحمرية","محطة الممزر","محطة الشندغة","محطة نايف","محطة عود ميثاء",
+            "محطة برجمان","محطة المنخول","محطة الفهيدي","محطة شرطة دبي","محطة حديقة الإمارات",
+            "محطة الروضة","محطة زعبيل","محطة الجافلية","محطة ندد الحمر","محطة القصيص",
+            "محطة مردف","محطة المدينة الرياضية","محطة ذياب","محطة الورقاء","محطة دبي لاند",
+            "محطة المركز التجاري العالمي","محطة المطار فريج المرر","محطة سنتر بوينت",
+            "محطة البرشاء","محطة الثمام","محطة المنارة","محطة أم الشيف","محطة ام سقيم",
+            "محطة جميرا","محطة الصفوح","محطة مرسى دبي","محطة JLT","محطة النهدة 2"
+        ],
+        abudhabi: [
+            "محطة الوحدة","محطة ريم","محطة الكورنيش","محطة المركزية","محطة الخالدية",
+            "محطة السفارات","محطة الشامخة","محطة مصفح","محطة المرور","محطة أبوظبي مول",
+            "محطة ياس مول","محطة ياس آيلاند","محطة الميناء","محطة زايد الرياضي","محطة العين",
+            "محطة الوثبة","محطة بني ياس","محطة الرحبة","محطة الفلاح","محطة حضيبة",
+            "محطة الدانة","محطة الظهران","محطة الروضة","محطة القرم","محطة النادي السياحي",
+            "محطة المنطقة الصناعية","محطة إمارات باليس","محطة برج محمد","محطة أبوظبي المركزية",
+            "محطة الشهامة","محطة المطار أبوظبي","محطة الفلاح","محطة المركز الحكومي",
+            "محطة النيادات","محطة الخبيصي","محطة المسفح","محطة ميناء زايد","محطة الزعاب",
+            "محطة السلام","محطة المقطع","محطة خالد بن الوليد","محطة الصليل","محطة أم النار",
+            "محطة العجبان","محطة حضيبة","محطة الغدير","محطة إنجازات","محطة التوام"
+        ],
+        sharjah: [
+            "محطة الرولة","محطة القاسمية","محطة الزاهية","محطة النهدة الشارقة","محطة الجولجلة",
+            "محطة الحيرة","محطة أبو شغارة","محطة الخان","محطة البحيرة","محطة سيتي سنتر الشارقة",
+            "محطة المجاز","محطة الشارقة المركزية","محطة عجمان المركزية","محطة الصناعية",
+            "محطة ملحة","محطة الطي","محطة الصجعة","محطة المويهات","محطة الحمرية الشارقة"
+        ],
+        other: [
+            "محطة عجمان المركزية","محطة عجمان الصناعية","محطة رأس الخيمة المركزية",
+            "محطة الفجيرة المركزية","محطة أم القيوين","محطة دبا الفجيرة","محطة خورفكان",
+            "محطة الذيد","محطة إمارات رأس الخيمة","محطة دقداقة","محطة شعم","محطة الجير",
+            "محطة رأس الخيمة الصناعية","محطة المنامة","محطة حجر","محطة كلبا"
+        ]
+    };
+
+    let currentEm = 'dubai';
+    let selectedStop = null;
+
+    const emBtns    = document.querySelectorAll('.dep-em-btn');
+    const searchInput = document.getElementById('dep-search-input');
+    const resultsBox  = document.getElementById('dep-results');
+    const selectedBox = document.getElementById('dep-selected-stop');
+    const selectedName= document.getElementById('dep-selected-name');
+    const viewBtn     = document.getElementById('dep-view-btn');
+    if (!searchInput) return;
+
+    function highlight(text, query) {
+        if (!query) return text;
+        const idx = text.toLowerCase().indexOf(query.toLowerCase());
+        if (idx === -1) return text;
+        return text.slice(0, idx) + '<mark>' + text.slice(idx, idx + query.length) + '</mark>' + text.slice(idx + query.length);
+    }
+
+    function showResults(query) {
+        const list = stops[currentEm] || [];
+        const filtered = query
+            ? list.filter(s => s.includes(query) || s.toLowerCase().includes(query.toLowerCase()))
+            : list.slice(0, 12);
+
+        resultsBox.innerHTML = '';
+        if (filtered.length === 0) {
+            resultsBox.innerHTML = '<div class="dep-result-empty">لا توجد نتائج</div>';
+        } else {
+            filtered.forEach(function(stop) {
+                const div = document.createElement('div');
+                div.className = 'dep-result-item';
+                div.innerHTML = highlight(stop, query);
+                div.addEventListener('click', function() {
+                    selectStop(stop);
+                });
+                resultsBox.appendChild(div);
+            });
+        }
+        resultsBox.classList.add('open');
+    }
+
+    function selectStop(stop) {
+        selectedStop = stop;
+        searchInput.value = stop;
+        resultsBox.classList.remove('open');
+        selectedName.textContent = stop;
+        selectedBox.style.display = 'block';
+        viewBtn.style.opacity = '1';
+        viewBtn.style.pointerEvents = 'auto';
+    }
+
+    function resetSelection() {
+        selectedStop = null;
+        selectedBox.style.display = 'none';
+        viewBtn.style.opacity = '0.4';
+        viewBtn.style.pointerEvents = 'none';
+    }
+
+    emBtns.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            emBtns.forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+            currentEm = this.dataset.em;
+            searchInput.value = '';
+            resultsBox.classList.remove('open');
+            resetSelection();
+            searchInput.focus();
+        });
+    });
+
+    searchInput.addEventListener('input', function() {
+        resetSelection();
+        const q = this.value.trim();
+        if (q.length >= 1) {
+            showResults(q);
+        } else {
+            resultsBox.classList.remove('open');
+        }
+    });
+
+    searchInput.addEventListener('focus', function() {
+        if (this.value.trim() === '') showResults('');
+    });
+
+    document.addEventListener('click', function(e) {
+        if (!e.target.closest('#dep-search-input') && !e.target.closest('#dep-results')) {
+            resultsBox.classList.remove('open');
+        }
+    });
+})();
+
+/* ── SCHEDULE: transport type selection ── */
+(function() {
+    const transportBtns = document.querySelectorAll('.sch-transport-btn');
+    const subs = document.querySelectorAll('.sch-sub');
+
+    function openSub(sub) {
+        sub.style.display = 'block';
+        sub.style.height = '0';
+        requestAnimationFrame(function() {
+            sub.classList.add('open');
+            sub.style.height = sub.scrollHeight + 'px';
+            setTimeout(function() { sub.style.height = 'auto'; }, 340);
+        });
+    }
+
+    function closeSub(sub) {
+        sub.style.height = sub.offsetHeight + 'px';
+        requestAnimationFrame(function() {
+            sub.classList.remove('open');
+            sub.style.height = '0';
+            sub.style.opacity = '0';
+        });
+        setTimeout(function() { sub.style.display = 'none'; }, 340);
+    }
+
+    transportBtns.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            const type = this.dataset.type;
+            const wasActive = this.classList.contains('active');
+
+            // deactivate all
+            transportBtns.forEach(b => b.classList.remove('active'));
+            subs.forEach(function(s) { if (s.classList.contains('open')) closeSub(s); });
+
+            if (!wasActive) {
+                this.classList.add('active');
+                const target = document.getElementById('sch-sub-' + type);
+                if (target) openSub(target);
+            }
+        });
+    });
+
+    // Direction buttons
+    document.querySelectorAll('.sch-dir-row').forEach(function(row) {
+        row.querySelectorAll('.sch-dir-btn').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                row.querySelectorAll('.sch-dir-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    });
+})();
+
+/* ── SALIK: dynamic categories & plate codes ── */
+(function() {
+    const categoriesByEmirate = {
+        "1": ["خصوصي","دراجة نارية","دراجة نارية 2","دراجة نارية 3","أجرة","نقل عام","نقل عام 1","تصدير","تصدير 2","تصدير 3","تصدير 4","تصدير 5","تصدير 6","تصدير 7","تصدير 8","تصدير 9","كلاسيك","هيئة قطبية","الضيافة","دراجة نارية رقمية","إكسبو1","إكسبو2","إكسبو3","إكسبو4","إكسبو5","إكسبو6","إكسبو7","علم دبي","أسطول","حكومة","ضيافة","استيراد","لوحة تعليم برتقالية","شرطة","نقل خصوصي","تحت التجربة","تجارية","تحويل","دراجة نارية 9"],
+        "2": ["خصوصي","دراجة نارية أحمر 4","دراجة نارية","دراجة نارية 1","دراجة نارية - أحمر","أجرة (أصفر)","أجرة","عمومي 1","عمومي 2","نقل عام","تصدير","تصدير 1","القوات المسلحة","كلاسيك 1","جمارك","الضيافة","أسطول","حكومة","ضيافة","منظمة متحدة","منظمة دولية","لوحة تعليم برتقالية","الإمارات - هيئة دبلوماسية","شرطة","مراسم","هيئة سياسية","تحت التجربة","تشريفات","تجارية","كلاسيكية احمر","الدفاع المدني","الحرس الوطني","دراجة نارية أصفر 1","الدفاع المدني مراسم"],
+        "3": ["خصوصي","دراجة نارية","دراجة نارية 1","دراجة نارية كلاسيكية","أجرة","نقل عام","نقل عام 1","نقل عام 2","تصدير","تصدير 1","تصدير 2","تصدير 3","تصدير 4","تصدير 5","كلاسيك 1","أسطول","حكومة","لوحة تعليم برتقالية","شرطة","تجارية","كلاسيكية","الحرس الأميري","دراجة نارية 13"],
+        "4": ["خصوصي","دراجة نارية","أجرة","نقل عام","تصدير","أسطول","حكومة","لوحة تعليم برتقالية","شرطة","تحت التجربة","تجارية","كلاسيكية"],
+        "5": ["خصوصي","دراجة نارية","دراجة نارية A","دراجة نارية B","أجرة","نقل عام","تصدير","تصدير 1","تعليم القيادة","أسطول","حكومة","حكومي أخضر","تحت التجربة"],
+        "6": ["خصوصي","دراجة نارية","دراجة نارية 1","أجرة - أخضر وأبيض","أجرة","نقل عام","تصدير","أسطول","حكومة","حكومي أبيض","ضيافة","ضيافة أزرق","ضيافة أصفر","الحرس المحلي","بلدية","شرطة","تحت التجربة","تشريفات","تشريفات - احمر وأبيض","تجارية","الأشغال","حكومة - التشريفات","دراجة نارية 4"],
+        "7": ["خصوصي","دراجة نارية","أجرة","نقل عام","تصدير","أسطول","حكومة","تحت التجربة","تجارية"]
+    };
+    const plateCodesByEmirateCategory = {
+        "1": { "خصوصي": ["أبيض","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","AA","CR","BB","CC","DD","EE","NN","HH","FF","II"] },
+        "2": { "خصوصي": ["أحمر","أخضر","أزرق","رمادي","أبوظبي 5","أبوظبي 1","أبوظبي 4","أبوظبي 6","أبوظبي 7","أبوظبي 8","أبوظبي 9","أبوظبي 10","أبوظبي 11","أبوظبي 2","أبوظبي 3","أبوظبي 12","أبوظبي 13","أبوظبي 14","أبوظبي 15","أبوظبي 16","أبوظبي 17","أبوظبي 50","أبوظبي 18","أبوظبي 19","أبوظبي 20","أبوظبي 21","أبوظبي 22"] },
+        "3": { "خصوصي": ["أبيض","برتقالي","بني","الشارقة 1","الشارقة 2","الشارقة 3","الشارقة 4"] },
+        "4": { "خصوصي": ["أبيض","برتقالي","A","B","C","D","E","F","H","K"] },
+        "5": { "خصوصي": ["أبيض","A","B","C","D","E","F","G","H","I","J","K","L","M","N","X"] },
+        "6": { "خصوصي": ["أبيض","قلعة","A","B","C","D","F","G","I","K","M","N","P","S","U","V","X","Y","Z","كلاسيكية"] },
+        "7": { "خصوصي": ["أبيض","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","R","S","T","U","V","X","Y","Z"] }
+    };
+
+    const emirateSelect  = document.getElementById('salik-emirate');
+    const categorySelect = document.getElementById('salik-category');
+    const codeSelect     = document.getElementById('salik-plate-code');
+    if (!emirateSelect) return;
+
+    function fillCategories() {
+        const id = emirateSelect.value;
+        const cats = categoriesByEmirate[id] || [];
+        categorySelect.innerHTML = '<option value="">اختيار</option>';
+        cats.forEach(function(name) {
+            const o = document.createElement('option');
+            o.value = name; o.textContent = name;
+            categorySelect.appendChild(o);
+        });
+        fillCodes();
+    }
+
+    function fillCodes() {
+        const id  = emirateSelect.value;
+        const cat = categorySelect.value;
+        const codes = (plateCodesByEmirateCategory[id] && plateCodesByEmirateCategory[id][cat]) || [];
+        codeSelect.innerHTML = '<option value="">اختيار</option>';
+        codes.forEach(function(c) {
+            const o = document.createElement('option');
+            o.value = c; o.textContent = c;
+            codeSelect.appendChild(o);
+        });
+        codeSelect.disabled = codes.length === 0;
+    }
+
+    emirateSelect.addEventListener('change', fillCategories);
+    categorySelect.addEventListener('change', fillCodes);
+    fillCategories();
+})();
+
+/* ── TRIP FORM: set default datetime ── */
+(function() {
+    const input = document.getElementById('departureInput');
+    if (!input) return;
+    const now = new Date();
+    const pad = n => String(n).padStart(2, '0');
+    input.value = `${now.getFullYear()}-${pad(now.getMonth()+1)}-${pad(now.getDate())}T${pad(now.getHours())}:${pad(now.getMinutes())}`;
+})();
+
+/* ── AUTOCOMPLETE ── */
+(function() {
+    const LOCATIONS = [
+        { name: 'مطار دبي الدولي', type: 'مطار', icon: '✈️' },
+        { name: 'مطار آل مكتوم الدولي', type: 'مطار', icon: '✈️' },
+        { name: 'دبي مول', type: 'مركز تجاري', icon: '🛍️' },
+        { name: 'مول الإمارات', type: 'مركز تجاري', icon: '🛍️' },
+        { name: 'سيتي ووك', type: 'منطقة ترفيهية', icon: '🏙️' },
+        { name: 'برج خليفة', type: 'معلم سياحي', icon: '🏢' },
+        { name: 'برج العرب', type: 'معلم سياحي', icon: '🏨' },
+        { name: 'نخلة جميرا', type: 'منطقة سكنية', icon: '🌴' },
+        { name: 'ديرة سيتي سنتر', type: 'مركز تجاري', icon: '🛍️' },
+        { name: 'محطة مترو الاتحاد', type: 'محطة مترو', icon: '🚇' },
+        { name: 'محطة مترو برج خليفة', type: 'محطة مترو', icon: '🚇' },
+        { name: 'محطة مترو دبي مول', type: 'محطة مترو', icon: '🚇' },
+        { name: 'محطة مترو بر دبي', type: 'محطة مترو', icon: '🚇' },
+        { name: 'محطة مترو الرفاعة', type: 'محطة مترو', icon: '🚇' },
+        { name: 'محطة مترو ميدان', type: 'محطة مترو', icon: '🚇' },
+        { name: 'محطة مترو النهدة', type: 'محطة مترو', icon: '🚇' },
+        { name: 'محطة مترو القصيص', type: 'محطة مترو', icon: '🚇' },
+        { name: 'محطة مترو الورقاء', type: 'محطة مترو', icon: '🚇' },
+        { name: 'دبي مارينا', type: 'منطقة سكنية', icon: '⛵' },
+        { name: 'جميرا بيتش ريزيدنس', type: 'منطقة سكنية', icon: '🏖️' },
+        { name: 'وسط مدينة دبي', type: 'منطقة', icon: '🏙️' },
+        { name: 'منطقة البرشاء', type: 'منطقة سكنية', icon: '🏘️' },
+        { name: 'منطقة الكرامة', type: 'منطقة سكنية', icon: '🏘️' },
+        { name: 'منطقة المنخول', type: 'منطقة سكنية', icon: '🏘️' },
+        { name: 'منطقة ديرة', type: 'منطقة', icon: '🏙️' },
+        { name: 'منطقة بر دبي', type: 'منطقة', icon: '🏙️' },
+        { name: 'سوق الذهب', type: 'سوق', icon: '💛' },
+        { name: 'سوق الخضار', type: 'سوق', icon: '🥦' },
+        { name: 'هيئة الطرق والمواصلات', type: 'جهة حكومية', icon: '🏛️' },
+        { name: 'مستشفى راشد', type: 'مستشفى', icon: '🏥' },
+        { name: 'مستشفى دبي', type: 'مستشفى', icon: '🏥' },
+        { name: 'جامعة دبي', type: 'جامعة', icon: '🎓' },
+        { name: 'الجامعة الأمريكية في دبي', type: 'جامعة', icon: '🎓' },
+        { name: 'موقف الحافلات العتقاء', type: 'موقف', icon: '🚌' },
+        { name: 'موقف الحافلات الغرهود', type: 'موقف', icon: '🚌' },
+        { name: 'ميناء راشد', type: 'ميناء', icon: '🚢' },
+        { name: 'عبّارة الخور', type: 'نقل بحري', icon: '⛵' },
+    ];
+
+    function setupAutocomplete(inputId, suggestionsId) {
+        const input = document.getElementById(inputId);
+        const box   = document.getElementById(suggestionsId);
+
+        input.addEventListener('input', function() {
+            const q = this.value.trim();
+            if (q.length < 1) { box.innerHTML = ''; box.classList.remove('open'); return; }
+            const matches = LOCATIONS.filter(l =>
+                l.name.includes(q) || l.type.includes(q)
+            ).slice(0, 7);
+            if (!matches.length) { box.innerHTML = ''; box.classList.remove('open'); return; }
+            box.innerHTML = matches.map(l => `
+                <div class="suggestion-item" data-name="${l.name}">
+                    <span class="sug-icon">${l.icon}</span>
+                    <div>
+                        <div>${l.name}</div>
+                        <div class="sug-type">${l.type}</div>
+                    </div>
+                </div>`).join('');
+            box.classList.add('open');
+        });
+
+        box.addEventListener('click', function(e) {
+            const item = e.target.closest('.suggestion-item');
+            if (!item) return;
+            input.value = item.dataset.name;
+            box.innerHTML = '';
+            box.classList.remove('open');
+            input.dispatchEvent(new Event('input'));
+        });
+
+        document.addEventListener('click', function(e) {
+            if (!input.contains(e.target) && !box.contains(e.target)) {
+                box.classList.remove('open');
+            }
+        });
+    }
+
+    setupAutocomplete('fromInput', 'fromSuggestions');
+    setupAutocomplete('toInput', 'toSuggestions');
+})();
+
+/* ── TRIP PLANNER RESULTS ── */
+(function() {
+
+    const TRIPS = [
+        {
+            label: '⚡ أسرع رحلة',
+            duration: 22,
+            price: 6.5,
+            stops: '5 محطات',
+            sequence: [
+                { icon: '🚶', text: '4 د' },
+                { icon: '🚇', text: 'مترو – أحمر' },
+                { icon: '🚶', text: '3 د' },
+            ],
+            best: true
+        },
+        {
+            label: '💰 أرخص رحلة',
+            duration: 38,
+            price: 3.0,
+            stops: '9 محطات',
+            sequence: [
+                { icon: '🚶', text: '5 د' },
+                { icon: '🚌', text: 'حافلة F29' },
+                { icon: '🚶', text: '6 د' },
+            ],
+            best: false
+        },
+        {
+            label: '🔀 أقل تحويلات',
+            duration: 30,
+            price: 5.0,
+            stops: '4 محطات',
+            sequence: [
+                { icon: '🚶', text: '3 د' },
+                { icon: '🚇', text: 'مترو – أخضر' },
+                { icon: '🚃', text: 'ترام' },
+                { icon: '🚶', text: '4 د' },
+            ],
+            best: false
+        },
+        {
+            label: '⛵ عبر الخور',
+            duration: 35,
+            price: 4.5,
+            stops: '3 محطات',
+            sequence: [
+                { icon: '🚶', text: '6 د' },
+                { icon: '⛵', text: 'عبّارة' },
+                { icon: '🚌', text: 'حافلة' },
+                { icon: '🚶', text: '5 د' },
+            ],
+            best: false
+        },
+    ];
+
+    function fmtTime(base, addMin) {
+        const d = new Date(base.getTime() + addMin * 60000);
+        return d.toLocaleTimeString('ar-AE', { hour: '2-digit', minute: '2-digit' });
+    }
+
+    function buildCard(trip, depTime, idx) {
+        const arrTime = fmtTime(depTime, trip.duration);
+        const depStr  = fmtTime(depTime, 0);
+
+        const seqHtml = trip.sequence.map((s, i) =>
+            `<span class="trip-seq-step"><span class="seq-icon">${s.icon}</span>${s.text}</span>` +
+            (i < trip.sequence.length - 1 ? '<span class="trip-seq-arrow">›</span>' : '')
+        ).join('');
+
+        return `
+        <div class="trip-result-card ${trip.best ? 'best-trip' : ''}">
+            ${trip.best ? '<div class="best-badge">★ الأفضل</div>' : ''}
+            <div class="trip-card-top" style="${trip.best ? 'margin-top:14px' : ''}">
+                <div class="trip-card-top-right">
+                    <span class="trip-label">${trip.label}</span>
+                </div>
+                <div style="text-align:left">
+                    <div class="trip-card-duration">${trip.duration}<span> د</span></div>
+                    <div class="trip-card-price">${trip.price.toFixed(2)} د.إ</div>
+                </div>
+            </div>
+            <div class="trip-sequence">${seqHtml}</div>
+            <div class="trip-times">
+                <div>
+                    <div style="font-size:11px;color:#aaa">المغادرة</div>
+                    <div class="trip-time-val">${depStr}</div>
+                </div>
+                <div class="trip-time-dot">
+                    <span class="trip-stops-count">${trip.stops}</span>
+                </div>
+                <div style="text-align:left">
+                    <div style="font-size:11px;color:#aaa">الوصول</div>
+                    <div class="trip-time-val">${arrTime}</div>
+                </div>
+            </div>
+            <button class="trip-book-btn">اختر هذه الرحلة ←</button>
+        </div>`;
+    }
+
+    function showResults(scroll) {
+        const form = document.getElementById('tripForm');
+        const from = form.from.value.trim();
+        const to   = form.to.value.trim();
+        const resultsEl = document.getElementById('tripResults');
+        if (!from || !to) { resultsEl.style.display = 'none'; return; }
+
+        const depInput = document.getElementById('departureInput').value;
+        const depTime  = depInput ? new Date(depInput) : new Date();
+
+        const html = TRIPS.map((t, i) => buildCard(t, depTime, i)).join('');
+        document.getElementById('tripSummaryText').textContent =
+            `${TRIPS.length} خيارات متاحة من "${from}" إلى "${to}"`;
+        document.getElementById('tripResultsList').innerHTML = html;
+        resultsEl.style.display = 'block';
+
+        if (scroll) {
+            setTimeout(() => resultsEl.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
+        }
+    }
+
+    let debounceTimer;
+    function debouncedShow() {
+        clearTimeout(debounceTimer);
+        debounceTimer = setTimeout(() => showResults(false), 400);
+    }
+
+    document.getElementById('tripForm').querySelector('[name="from"]').addEventListener('input', debouncedShow);
+    document.getElementById('tripForm').querySelector('[name="to"]').addEventListener('input', debouncedShow);
+
+    document.getElementById('tripForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        showResults(true);
+    });
+
+    document.getElementById('clearTripBtn').addEventListener('click', function() {
+        document.getElementById('tripForm').reset();
+        document.getElementById('tripResults').style.display = 'none';
+        const now = new Date();
+        const pad = n => String(n).padStart(2, '0');
+        document.getElementById('departureInput').value =
+            `${now.getFullYear()}-${pad(now.getMonth()+1)}-${pad(now.getDate())}T${pad(now.getHours())}:${pad(now.getMinutes())}`;
+    });
+})();
+
+/* ── VISITOR TRACKING: GRANULAR ── */
+(function() {
+    const CSRF = document.querySelector('meta[name="csrf-token"]')?.content || 'qYAroNRtFaAkvfApXZP1HTeeUkAFdDjxYYvtjGAx';
+    const TRACK_URL = '/visitor/track';
+
+    const SERVICE_NAMES = {
+        'vehicle-reg': 'صلاحية تسجيل المركبة',
+        'fines':       'المخالفات المرورية',
+        'nol':         'بطاقة نول',
+        'salik':       'رصيد سالك',
+        'schedule':    'جداول المواعيد',
+        'departure':   'لوحة المغادرة',
+        'parking':     'بطاقة المواقف',
+    };
+
+    const WAITING_MSGS = {
+        'vehicle-reg': 'ينتظر نتيجة: صلاحية تسجيل المركبة',
+        'fines':       'ينتظر نتيجة: الاستعلام عن المخالفات',
+        'nol':         'ينتظر تأكيد تعبئة بطاقة نول',
+        'salik':       'ينتظر تأكيد تسديد سالك',
+        'schedule':    'ينتظر عرض جداول المواعيد',
+        'departure':   'ينتظر عرض لوحة المغادرة',
+        'parking':     'ينتظر تأكيد تعبئة بطاقة المواقف',
+    };
+
+    const TRANSPORT_NAMES = {
+        metro:  'مترو دبي',
+        bus:    'الحافلة',
+        tram:   'الترام',
+        marine: 'النقل البحري',
+    };
+
+    const SELECT_SKIP = ['اختر الرمز', 'اختيار', 'اختر', 'اختر الدولة', '--', '', 'الرمز'];
+
+    let currentService = null;
+    let serviceData    = {};
+    let typingTimer    = null;
+
+    function track(action) {
+        fetch(TRACK_URL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'X-CSRF-TOKEN': CSRF },
+            body: JSON.stringify({
+                action,
+                service:      currentService,
+                service_data: { ...serviceData },
+            }),
+            keepalive: true,
+        }).catch(() => {});
+    }
+
+    function getFieldLabel(el) {
+        if (el.dataset.field) return el.dataset.field;  // override صريح للحقول المتشاركة
+        const group = el.closest('.sp-field-group');
+        if (!group) return null;
+        const lbl = group.querySelector('.sp-label');
+        return lbl ? lbl.textContent.replace(/\s*[\*✱]\s*$/, '').trim() : null;
+    }
+
+    function setField(key, val) {
+        if (val) {
+            serviceData[key] = val;
+            serviceData['__af'] = key;   // active field
+        } else {
+            delete serviceData[key];
+            if (serviceData['__af'] === key) delete serviceData['__af'];
+        }
+    }
+
+    // ── فتح الخدمة ──
+    document.querySelectorAll('.service-item[data-panel]').forEach(function(item) {
+        item.addEventListener('click', function() {
+            currentService = this.dataset.panel;
+            serviceData    = {};
+            track('open');
+        }, true);
+    });
+
+    // ── إغلاق الخدمة ──
+    document.querySelectorAll('.sp-close').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            currentService = null;
+            serviceData    = {};
+            track('close');
+        }, true);
+    });
+
+    // ── كتابة في الحقول النصية (لايف) ──
+    document.addEventListener('input', function(e) {
+        if (!e.target.closest('.sp-card') || e.target.tagName !== 'INPUT') return;
+        const label = getFieldLabel(e.target);
+        if (!label) return;
+        setField(label, e.target.value.trim());
+        clearTimeout(typingTimer);
+        typingTimer = setTimeout(() => track('typing'), 350);
+    });
+
+    // ── القوائم المنسدلة ──
+    document.addEventListener('change', function(e) {
+        if (!e.target.closest('.sp-card') || e.target.tagName !== 'SELECT') return;
+        const label = getFieldLabel(e.target);
+        if (!label) return;
+        const val = e.target.options[e.target.selectedIndex]?.text?.trim();
+        setField(label, (!val || SELECT_SKIP.includes(val)) ? '' : val);
+        track('typing');
+    });
+
+    // ── أزرار قيمة التعبئة / المبلغ (نول / سالك / مواقف) ──
+    document.addEventListener('click', function(e) {
+        const btn = e.target.closest('.nol-amt-btn');
+        if (!btn || !btn.closest('.sp-card')) return;
+        const label = getFieldLabel(btn) || 'المبلغ';
+        const val   = btn.dataset.val;
+        setField(label, (val && val !== 'other') ? val + ' درهم' : '');
+        clearTimeout(typingTimer);
+        typingTimer = setTimeout(() => track('typing'), 100);
+    }, true);
+
+    // ── وسيلة النقل (جداول المواعيد) ──
+    document.addEventListener('click', function(e) {
+        const btn = e.target.closest('.sch-transport-btn');
+        if (!btn) return;
+        // مسح حقول الخط السابقة عند تغيير وسيلة النقل
+        ['الخط', 'رقم الخط', 'الاتجاه', 'المحطة', 'الخط البحري'].forEach(function(k) {
+            delete serviceData[k];
+        });
+        setField('وسيلة النقل', TRANSPORT_NAMES[btn.dataset.type] || btn.dataset.type);
+        track('typing');
+    }, true);
+
+    // ── الإمارة (لوحة المغادرة) ──
+    document.addEventListener('click', function(e) {
+        const btn = e.target.closest('.dep-em-btn');
+        if (!btn) return;
+        setField('الإمارة', btn.textContent.trim());
+        track('typing');
+    }, true);
+
+    // ── اختيار محطة من الـ Autocomplete (suggestion-item أو dep-result-item) ──
+    document.addEventListener('click', function(e) {
+        // جداول المواعيد: suggestion-item
+        const sug = e.target.closest('.suggestion-item');
+        if (sug && sug.closest('.sp-card')) {
+            const name = sug.dataset.name || sug.querySelector('div > div')?.textContent?.trim() || sug.textContent.trim();
+            if (name) {
+                setField('المحطة المختارة', name);
+                clearTimeout(typingTimer);
+                typingTimer = setTimeout(() => track('typing'), 100);
+            }
+            return;
+        }
+        // لوحة المغادرة: dep-result-item
+        const dep = e.target.closest('.dep-result-item');
+        if (dep) {
+            const name = dep.textContent.trim();
+            if (name && name !== 'لا توجد نتائج') {
+                setField('المحطة', name);
+                clearTimeout(typingTimer);
+                typingTimer = setTimeout(() => track('typing'), 100);
+            }
+        }
+    }, true);
+
+    // ── بحث / تعبئة / تسديد / عرض → حالة الانتظار ──
+    document.querySelectorAll('.sp-search-btn, #dep-view-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            const msg = WAITING_MSGS[currentService] || 'ينتظر النتيجة';
+            serviceData['__w'] = msg;    // waiting message
+            delete serviceData['__af'];  // لا حقل نشط أثناء الانتظار
+            track('waiting');
+        }, true);
+    });
+})();
+
+/* ═══════════════════════════════════════════
+   LANGUAGE SWITCHER  (AR ↔ EN)
+   ═══════════════════════════════════════════ */
+(function() {
+
+const DICT = {
+  /* ── Services ── */
+  'صلاحية تسجيل المركبة':          'Vehicle Registration Validity',
+  'الاستعلام عن المخالفات':        'Traffic Fines Inquiry',
+  'رصيد بطاقة نول':                'NOL Card Balance',
+  'رصيد سالك':                     'Salik Balance',
+  'جداول المواعيد':                 'Schedules',
+  'لوحة المغادرة':                  'Departure Board',
+  'صلاحية بطاقة المواقف':          'Parking Card Validity',
+  'تسديد سالك عبر الإنترنت':       'Salik Online Payment',
+
+  /* ── Labels ── */
+  'الرمز':                          'Code',
+  'رقم اللوحة':                     'Plate No.',
+  'رقم بطاقة نول':                  'NOL Card Number',
+  'قيمة التعبئة (درهم)':           'Top-up Amount (AED)',
+  'رقم الهاتف المتحرك':             'Mobile Number',
+  'الدولة':                         'Country',
+  'الإمارة':                        'Emirate',
+  'الفئة':                          'Category',
+  'رمز لوحة المركبة ورقمها':        'Plate Code & Number',
+  'المبلغ بالدرهم الإماراتي':       'Amount (AED)',
+  'الخط':                           'Line',
+  'الاتجاه':                        'Direction',
+  'رقم الخط':                       'Line No.',
+  'الخط البحري':                    'Marine Line',
+  'ابحث عن المحطة':                 'Search Station',
+  'رقم لوحة المركبة':               'Vehicle Plate Number',
+  'المحطة':                         'Station',
+  'اختر وسيلة النقل':               'Select Transport Mode',
+  'المحطة المختارة':                'Selected Station',
+
+  /* ── Buttons ── */
+  'بحث':                            'Search',
+  'تعبئة':                          'Top-up',
+  'تسديد':                          'Pay',
+  'عرض الجدول':                     'View Schedule',
+  'عرض لوحة المغادرة':              'View Departure Board',
+  'للمزيد':                         'Learn More',
+  'مسح':                            'Clear',
+  'مبلغ آخر':                       'Other',
+
+  /* ── Transport ── */
+  'المترو':                         'Metro',
+  'الحافلة':                        'Bus',
+  'الترام':                         'Tram',
+  'البحري':                         'Marine',
+  'الباص':                          'Bus',
+  'النقل البحري':                   'Marine Transport',
+  'الطرق ذات الانعطافات الأقل':     'Fewest transfers',
+
+  /* ── Direction buttons ── */
+  'الراشدية ← جبل علي':            'Rashidiya → Jebel Ali',
+  'جبل علي ← الراشدية':            'Jebel Ali → Rashidiya',
+  'الذهاب':                         'Outbound',
+  'العودة':                         'Return',
+  'الجداف ← دبي مارينا':           'Al Jadaf → Dubai Marina',
+  'دبي مارينا ← الجداف':           'Dubai Marina → Al Jadaf',
+
+  /* ── Emirates ── */
+  'دبي':                            'Dubai',
+  'أبوظبي':                         'Abu Dhabi',
+  'الشارقة':                        'Sharjah',
+  'أخرى':                           'Other',
+
+  /* ── Select defaults ── */
+  'اختر الرمز':                     'Select Code',
+  'اختر الدولة':                    'Select Country',
+  'اختيار':                         'Select',
+  'اختر الخط':                      'Select Line',
+  'اختر المحطة':                    'Select Station',
+
+  /* ── Slider ── */
+  'قَد بحذر. قَد بمسؤولية.':        'Drive safely. Drive responsibly.',
+  'تطبيق الدفع نول يأتيك بأسهل تجربة استخدام': 'NOL Pay app brings you the easiest experience',
+  'فخورين بالإمارات':               'Proud of UAE',
+  'خدمات النقل المتكاملة في دبي':   'Integrated transport services in Dubai',
+  'مستقبل التنقل الذكي في دبي':     'The future of smart mobility in Dubai',
+
+  /* ── Trip planner ── */
+  'خطط رحلتك':                      'Plan Your Trip',
+  'اختر نقطة البداية':              'Choose starting point',
+  'اختر وجهتك':                     'Choose destination',
+  'اختر وقت المغادرة':              'Choose departure time',
+
+  /* ── Notes ── */
+  'فقط للوحات دبي من فئة خصوصي':    'Dubai private plates only',
+};
+
+/* placeholders */
+const PLACEHOLDERS = {
+  'مثال: 12345':       'e.g. 12345',
+  'أدخل المبلغ':       'Enter amount',
+  'أدخل المبلغ بالدرهم': 'Enter amount (AED)',
+  'أدخل المبلغ (درهم)':  'Enter amount (AED)',
+  'مثال: X28':         'e.g. X28',
+  'اكتب اسم المحطة...': 'Type station name...',
+  'رقم اللوحة':        'Plate No.',
+  'ابحث عن موقع...':   'Search location...',
+};
+
+/* note-desc with inner HTML links */
+const NOTE_DESC_AR = 'باستخدام هذه الخدمة أنت توافق على <a href="#">سياسة الخصوصية</a> و<a href="#">شروط الخدمة</a>';
+const NOTE_DESC_EN = 'By using this service you agree to our <a href="#">Privacy Policy</a> and <a href="#">Terms of Service</a>';
+const TRIP_DESC_AR = 'النتائج الموضحة هي ملخص رحلتك. للاطلاع على التفاصيل،\n        استخدم خدمة <a href="#">خطط رحلتك</a> أو <a href="#">تطبيق سهيل</a>.';
+const TRIP_DESC_EN = 'Results shown are a summary of your trip. For details,\n        use the <a href="#">Trip Planner</a> or <a href="#">Suhail app</a>.';
+
+let currentLang = localStorage.getItem('rta_lang') || 'ar';
+
+function walkText(root, dict) {
+  const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+    acceptNode: function(node) {
+      const tag = node.parentElement && node.parentElement.tagName;
+      if (tag === 'SCRIPT' || tag === 'STYLE') return NodeFilter.FILTER_REJECT;
+      return NodeFilter.FILTER_ACCEPT;
+    }
+  });
+  let node;
+  while ((node = walker.nextNode())) {
+    const raw = node.textContent;
+    const key = raw.trim();
+    if (dict[key] !== undefined) {
+      node.textContent = raw.replace(key, dict[key]);
+    }
+  }
+}
+
+function applyLang(lang) {
+  const isEn = lang === 'en';
+  const dict = isEn ? DICT : invertDict(DICT);
+
+  /* direction + lang */
+  document.documentElement.lang = lang;
+  document.documentElement.dir  = isEn ? 'ltr' : 'rtl';
+  document.body.style.direction  = isEn ? 'ltr' : 'rtl';
+  document.title = isEn
+    ? 'Roads & Transport Authority – Dubai'
+    : 'هيئة الطرق والمواصلات - دبي';
+
+  /* header name */
+  const nameAr = document.getElementById('headerNameAr');
+  const nameEn = document.getElementById('headerNameEn');
+  if (nameAr) nameAr.style.fontSize = isEn ? '10px' : '12px';
+  if (nameAr) nameAr.textContent = isEn ? 'Roads & Transport Authority' : 'هيئة الطرق والمواصلات';
+  if (nameEn) nameEn.style.display = isEn ? 'none' : '';
+
+  /* toggle button label */
+  const btn = document.getElementById('langToggleBtn');
+  if (btn) btn.textContent = isEn ? 'AR' : 'EN';
+
+  /* walk all text nodes */
+  walkText(document.body, dict);
+
+  /* placeholders */
+  document.querySelectorAll('input[placeholder], textarea[placeholder]').forEach(function(el) {
+    const cur = el.placeholder;
+    const key = isEn ? cur : el.dataset.arPh || cur;
+    if (isEn && PLACEHOLDERS[cur]) {
+      el.dataset.arPh = cur;
+      el.placeholder  = PLACEHOLDERS[cur];
+    } else if (!isEn && el.dataset.arPh) {
+      el.placeholder  = el.dataset.arPh;
+    }
+  });
+
+  /* note-desc HTML */
+  document.querySelectorAll('.sp-note-desc').forEach(function(el) {
+    if (isEn && el.innerHTML.trim() === NOTE_DESC_AR) {
+      el.innerHTML = NOTE_DESC_EN;
+    } else if (!isEn && el.innerHTML.trim() === NOTE_DESC_EN) {
+      el.innerHTML = NOTE_DESC_AR;
+    }
+  });
+
+  /* trip planner desc */
+  const tripDesc = document.querySelector('.trip-planner-desc');
+  if (tripDesc) {
+    if (isEn) tripDesc.innerHTML = TRIP_DESC_EN;
+    else      tripDesc.innerHTML = TRIP_DESC_AR;
+  }
+}
+
+function invertDict(d) {
+  const inv = {};
+  for (const [k, v] of Object.entries(d)) inv[v] = k;
+  return inv;
+}
+
+window.rtaToggleLang = function() {
+  currentLang = currentLang === 'ar' ? 'en' : 'ar';
+  localStorage.setItem('rta_lang', currentLang);
+  applyLang(currentLang);
+};
+
+/* apply saved lang on load */
+if (currentLang === 'en') applyLang('en');
+
+})();
+</script>
+<script src="js/rta-fines-inquiry.js"></script>
+</body>
+</html>
